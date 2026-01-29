@@ -4,83 +4,52 @@
     <title>Tangentwise Sector Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-    :root { --primary: #0366d6; --bg: #f8f9fa; --border: #e1e4e8; --text: #1a1a1a; --success: #28a745; --danger: #d73a49; }
+        :root { --primary: #0366d6; --bg: #f8f9fa; --border: #e1e4e8; --text: #1a1a1a; --success: #28a745; --danger: #d73a49; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; color: var(--text); background: white; line-height: 1.5; }
+        
+        /* Navigation & Header */
+        .dashboard-header { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px; background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); align-items: flex-end; }
+        .group { display: flex; flex-direction: column; gap: 8px; }
+        .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6a737d; }
+        
+        select.nav-dropdown { padding: 10px; border-radius: 6px; border: 1px solid var(--border); font-size: 14px; font-weight: 600; min-width: 220px; cursor: pointer; }
+        
+        .btn-group { display: flex; gap: 5px; }
+        .btn { border: 1px solid #d1d5da; padding: 8px 14px; cursor: pointer; background: white; border-radius: 6px; font-size: 13px; font-weight: 500; transition: 0.2s; }
+        .btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        /* Main UI */
+        .chart-container { position: relative; height: 65vh; width: 100%; min-height: 450px; }
+        #details-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-top: 20px; }
+        
+        /* Details Cards */
+        .ticker-card { border: 1px solid var(--border); padding: 20px; border-radius: 10px; transition: transform 0.2s; background: #fff; }
+        .ticker-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .price-hero { font-size: 24px; font-weight: 800; margin: 10px 0; }
+        .metric-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px solid #f0f0f0; }
+        .badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+        .badge-etf { background: #e1f5fe; color: #01579b; }
+        .badge-stock { background: #f3e5f5; color: #7b1fa2; }
+        
+        .pos { color: var(--success); font-weight: 600; }
+        .neg { color: var(--danger); font-weight: 600; }
+        
+        .footer-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .info-card { background: var(--bg); padding: 20px; border-radius: 8px; font-size: 13px; }
 
-    html, body {
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-    }
-
-    body { 
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-        padding: 5px; 
-        color: var(--text); 
-        background: white; 
-        line-height: 1.2; 
-        font-size: 12px; 
-    }
-
-    /* Compact Header for Narrow Containers */
-    .dashboard-header { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 10px; 
-        margin-bottom: 12px; 
-        background: var(--bg); 
-        padding: 10px; 
-        border-radius: 6px; 
-        border: 1px solid var(--border); 
-    }
+        /* Mobile Optimizations */
+            @media (max-width: 768px) {
+            body { padding: 10px; }
     
-    @media (min-width: 1200px) {
-        .dashboard-header {
-            flex-direction: row;
-            align-items: flex-end;
-            justify-content: space-between;
-        }
-    }
-
-    .group { display: flex; flex-direction: column; gap: 4px; }
-    .label { font-size: 9px; font-weight: 700; color: #6a737d; text-transform: uppercase; }
-    
-    select.nav-dropdown { padding: 4px 6px; font-size: 11px; width: 100%; border-radius: 4px; }
-    .btn-group { display: flex; width: 100%; }
-    .btn { flex: 1; padding: 5px 6px; font-size: 10.5px; text-align: center; border: 1px solid #d1d5da; background: white; cursor: pointer; }
-    .btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-
-    /* Chart */
-    .chart-container { 
-        position: relative; 
-        width: 100% !important;
-        height: 32vh; 
-        min-height: 200px; 
-        margin-bottom: 10px;
-    }
-
-    /* Ticker Details */
-    #details-grid { 
-        display: none; 
-        grid-template-columns: 1fr; 
-        gap: 10px; 
-    }
-
-    @media (min-width: 1200px) {
-        #details-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .ticker-card { border: 1px solid var(--border); padding: 10px; border-radius: 6px; background: #fff; }
-    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-    .price-hero { font-size: 18px; font-weight: 800; margin: 2px 0; }
-    .metric-row { display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0; border-bottom: 1px solid #f0f0f0; }
-    
-    .footer-info { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-    .info-card { background: var(--bg); padding: 10px; border-radius: 6px; font-size: 11px; }
-
-    @media (max-width: 600px) {
-        h2 { font-size: 16px; }
-        .chart-container { height: 26vh; min-height: 190px; }
-    }
+            .dashboard-header {padding: 15px; flex-direction: column; align-items: stretch; }
+            .nav-dropdown { width: 100%; }
+            .chart-container {height: 50vh; /* Shorter chart on mobile to save space */ 
+                              min-height: 300px; }
+            .footer-info { grid-template-columns: 1fr; /* Stack info cards vertically */ }
+            #details-grid {grid-template-columns: 1fr; /* One ticker card per row on mobile */  }
+            .price-hero { font-size: 20px; }
+            }
     </style>
 </head>
 <body>
@@ -95,7 +64,7 @@
             <option value="mro-dist">MRO Distribution</option>
             <option value="automation-infra">Automation Infrastructure</option>
             <option value="spatial-intelligence">Mapping & Spatial Intelligence</option>              
-        </select>
+            </select>
     </div>
     
     <div class="group">
@@ -128,31 +97,32 @@
         <strong>Market-Cap & Net Asset Weighted Index</strong>
         <p>
             This benchmark is constructed using valuation-based weights—Market Capitalization for equities and Net Assets for ETFs—rather than a simple equal-weighted average. 
-            Larger constituents exert proportionally greater influence. We cap individual weights at 30% and redistribute excess.
+            As a result, larger constituents exert proportionally greater influence on index performance, reflecting real-world capital allocation and market structure. 
+            To maintain representative exposure, individual constituent weights are capped at 30% and excess weight is redistributed proportionally.
         </p>
     </div>
     <div class="info-card">
         <strong>Chart Interaction & Methodology Notes</strong>
         <ul>
-            <li><strong>Legend Controls:</strong> Click a ticker to isolate or toggle series.</li>
-            <li><strong>Weighted Index Line:</strong> Black line represents size-adjusted aggregate performance.</li>
+            <li><strong>Legend Controls:</strong> Click a ticker to isolate or toggle individual series for focused comparison.</li>
+            <li><strong>Weighted Index Line:</strong> The black index line represents aggregate sector performance adjusted for constituent size and capitalization. 
+                        (Individual constituent weights are capped at 30%) </li>
         </ul>
     </div>
 </div>
+
 </div>
 
 <div id="details-grid"></div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-
 let myChart;
 let globalData = {};
 let currentCategory = 'battery-index';
 let currentMetric = 'index';
 let currentView = 'chart';
 
-const MAX_WEIGHT = 0.30;
+const MAX_WEIGHT = 0.30; // 30% single-name cap
 const formatter = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
 const curFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
@@ -183,7 +153,6 @@ function processSectorLabel() {
 
 function render() {
     const firstTicker = Object.keys(globalData)[0];
-    if(!firstTicker) return;
     const lastEntry = globalData[firstTicker].prices.slice(-1)[0];
     document.getElementById('update-ts').innerText = `Data Updated: ${lastEntry.date}`;
 
@@ -200,16 +169,17 @@ function render() {
 
 function renderChart() {
     const tickers = Object.keys(globalData);
-    if(!tickers.length) return;
     const labels = globalData[tickers[0]].prices.map(p => p.date);
     const colors = ['#28a745', '#0366d6', '#6f42c1', '#f66a0a', '#ffd33d', '#d73a49', '#00bcd4'];
 
     const datasets = tickers.map((t, i) => {
+        const meta = globalData[t].metadata;
         const prices = globalData[t].prices;
         const basePrice = prices[0].price;
+
         return {
             label: t,
-            data: prices.map(p => currentMetric === 'index' ? +(p.price / basePrice * 100).toFixed(2) : p.price),
+            data: prices.map(p => currentMetric === 'index' ? (p.price / basePrice * 100).toFixed(2) : p.price),
             borderColor: colors[i % colors.length],
             backgroundColor: colors[i % colors.length],
             borderWidth: 2,
@@ -219,41 +189,74 @@ function renderChart() {
     });
 
     if (currentMetric === 'index') {
-        const rawWeights = {};
-        const totalValuation = tickers.reduce((sum, t) => sum + (globalData[t].metadata.valuation || 0), 0);
-        tickers.forEach(t => { rawWeights[t] = (globalData[t].metadata.valuation || 0) / totalValuation; });
+        // 1. Raw market-cap weights
+const rawWeights = {};
+const totalValuation = tickers.reduce(
+    (sum, t) => sum + (globalData[t].metadata.valuation || 0), 0
+);
 
-        let cappedWeights = {};
-        let excessWeight = 0;
-        let uncappedTotal = 0;
-        tickers.forEach(t => {
-            if(rawWeights[t] > MAX_WEIGHT) { cappedWeights[t] = MAX_WEIGHT; excessWeight += rawWeights[t] - MAX_WEIGHT; }
-            else { cappedWeights[t] = rawWeights[t]; uncappedTotal += rawWeights[t]; }
+tickers.forEach(t => {
+    rawWeights[t] = (globalData[t].metadata.valuation || 0) / totalValuation;
+});
+
+// 2. Apply 30% cap
+let cappedWeights = {};
+let excessWeight = 0;
+let uncappedTotal = 0;
+
+tickers.forEach(t => {
+    if (rawWeights[t] > MAX_WEIGHT) {
+        cappedWeights[t] = MAX_WEIGHT;
+        excessWeight += rawWeights[t] - MAX_WEIGHT;
+    } else {
+        cappedWeights[t] = rawWeights[t];
+        uncappedTotal += rawWeights[t];
+    }
+});
+
+// 3. Redistribute excess proportionally
+tickers.forEach(t => {
+    if (rawWeights[t] <= MAX_WEIGHT) {
+        cappedWeights[t] += (rawWeights[t] / uncappedTotal) * excessWeight;
+    }
+});
+
+// 4. Build weighted index series
+const weightedData = labels.map((_, timeIdx) => {
+    let weightedSum = 0;
+    tickers.forEach(t => {
+        const perf =
+            (globalData[t].prices[timeIdx].price /
+             globalData[t].prices[0].price) * 100;
+
+        weightedSum += perf * cappedWeights[t];
+    });
+    return weightedSum.toFixed(2);
         });
 
-        tickers.forEach(t => { if(rawWeights[t] <= MAX_WEIGHT) { cappedWeights[t] += (rawWeights[t]/uncappedTotal)*excessWeight; } });
-
-        const weightedData = labels.map((_, i) => {
-            let sum = 0;
-            tickers.forEach(t => { sum += (globalData[t].prices[i].price / globalData[t].prices[0].price * 100) * cappedWeights[t]; });
-            return +sum.toFixed(2);
+        datasets.unshift({
+            label: `COMPOSITE BENCHMARK`,
+            data: weightedData,
+            borderColor: '#1a1a1a',
+            borderWidth: 4,
+            pointRadius: 0,
+            order: -1
         });
-
-        datasets.unshift({ label: `COMPOSITE BENCHMARK`, data: weightedData, borderColor: '#1a1a1a', borderWidth: 4, pointRadius: 0, order: -1 });
     }
 
-    if(myChart) myChart.destroy();
+    if (myChart) myChart.destroy();
     myChart = new Chart(document.getElementById('tangentChart'), {
         type: 'line',
         data: { labels, datasets },
         options: {
-            responsive: true,
-            maintainAspectRatio: false,
+            responsive: true, maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
-            plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 10, font:{size:10} } } },
+            plugins: { 
+                legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } }
+            },
             scales: { 
-                y: { ticks:{ font:{size:10} }, title:{ display:false } },
-                x: { ticks:{ font:{size:10}, maxRotation:45, minRotation:45, autoSkip:true, maxTicksLimit:8 } }
+                y: { title: { display: true, text: currentMetric === 'index' ? 'Performance (Base 100)' : 'Price (USD)' }, grid: { color: '#f0f0f0' } },
+                x: { grid: { display: false } }
             }
         }
     });
@@ -267,40 +270,55 @@ function renderDetails() {
         const latestPrice = globalData[t].prices.slice(-1)[0].price;
         const card = document.createElement('div');
         card.className = 'ticker-card';
+        
         const ytdClass = m.ytd_growth.startsWith('-') ? 'neg' : 'pos';
         const totClass = m.total_return.startsWith('-') ? 'neg' : 'pos';
 
         card.innerHTML = `
             <div class="card-header">
                 <strong>${m.name}</strong>
-                <span class="badge ${m.type==='ETF'?'badge-etf':'badge-stock'}">${m.type}</span>
+                <span class="badge ${m.type === 'ETF' ? 'badge-etf' : 'badge-stock'}">${m.type}</span>
             </div>
             <div class="price-hero">${curFormatter.format(latestPrice)}</div>
             <div class="metric-row"><span>Valuation</span> <strong>${formatter.format(m.valuation)}</strong></div>
             <div class="metric-row"><span>YTD Growth</span> <strong class="${ytdClass}">${m.ytd_growth}</strong></div>
             <div class="metric-row"><span>24M Return</span> <strong class="${totClass}">${m.total_return}</strong></div>
-            <p style="font-size:12px;color:#666;margin:15px 0;">${m.summary.substring(0,140)}...</p>
-            <div style="font-size:11px;color:#999;border-top:1px solid #eee;padding-top:10px;">
-                Top Holdings: ${Array.isArray(m.holdings)?m.holdings.join(', '):m.holdings}
+            <p style="font-size:12px; color: #666; margin: 15px 0;">${m.summary.substring(0, 140)}...</p>
+            <div style="font-size:11px; color:#999; border-top: 1px solid #eee; padding-top: 10px;">
+                Top Holdings: ${Array.isArray(m.holdings) ? m.holdings.join(', ') : m.holdings}
             </div>
         `;
         grid.appendChild(card);
     });
 }
 
-function setCategory(cat){ currentCategory=cat; fetchData(); }
-function setMetric(met){ currentMetric=met; document.getElementById('btn-index').classList.toggle('active',met==='index'); document.getElementById('btn-price').classList.toggle('active',met==='price'); render(); }
-function setView(view){ currentView=view; document.getElementById('mode-chart').classList.toggle('active',view==='chart'); document.getElementById('mode-details').classList.toggle('active',view==='details'); render(); }
-
-function sendHeight(){ window.parent.postMessage({ setHeight:document.body.scrollHeight }, '*'); }
+function setCategory(cat) { currentCategory = cat; fetchData(); }
+function setMetric(met) { 
+    currentMetric = met; 
+    document.getElementById('btn-index').classList.toggle('active', met === 'index');
+    document.getElementById('btn-price').classList.toggle('active', met === 'price');
+    render(); 
+}
+function setView(view) { 
+    currentView = view; 
+    document.getElementById('mode-chart').classList.toggle('active', view === 'chart');
+    document.getElementById('mode-details').classList.toggle('active', view === 'details');
+    render(); 
+}
 
 fetchData();
+    // Notify WordPress to resize the iframe whenever the view changes
+function sendHeight() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ 'setHeight': height }, '*');
+}
 
-// Override render to send iframe height
+// Trigger height update after every render
 const originalRender = render;
-render = function(){ originalRender(); setTimeout(sendHeight,200); };
-
-});
+render = function() {
+    originalRender();
+    setTimeout(sendHeight, 200); // Small delay to allow cards to finish drawing
+};
 </script>
 </body>
 </html>
