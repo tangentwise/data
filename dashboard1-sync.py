@@ -6,7 +6,7 @@ from datetime import datetime
 
 # CONFIGURATION: Add as many sectors as you want here.
 sector_map = {
-    "battery-index": ["LIT", "LITP", "ION", "GSG", "ALB"],
+    "battery-index": ["LIT", "LITP", "ION", "GSG"],
     "last-mile": ["UPS", "FDX", "AMZN", "EXPD", "DPSTF"],
     "mro-dist": ["AIT", "DXP", "GWW", "FAST", "MSM", "WCC"],
     "gig-economy": ["UBER", "DASH", "LYFT", "TOST"],
