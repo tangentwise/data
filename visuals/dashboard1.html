@@ -4,52 +4,71 @@
     <title>Tangentwise Sector Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        :root { --primary: #0366d6; --bg: #f8f9fa; --border: #e1e4e8; --text: #1a1a1a; --success: #28a745; --danger: #d73a49; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; color: var(--text); background: white; line-height: 1.5; }
-        
-        /* Navigation & Header */
-        .dashboard-header { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px; background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); align-items: flex-end; }
-        .group { display: flex; flex-direction: column; gap: 8px; }
-        .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6a737d; }
-        
-        select.nav-dropdown { padding: 10px; border-radius: 6px; border: 1px solid var(--border); font-size: 14px; font-weight: 600; min-width: 220px; cursor: pointer; }
-        
-        .btn-group { display: flex; gap: 5px; }
-        .btn { border: 1px solid #d1d5da; padding: 8px 14px; cursor: pointer; background: white; border-radius: 6px; font-size: 13px; font-weight: 500; transition: 0.2s; }
-        .btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-        
-        /* Main UI */
-        .chart-container { position: relative; height: 65vh; width: 100%; min-height: 450px; }
-        #details-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-top: 20px; }
-        
-        /* Details Cards */
-        .ticker-card { border: 1px solid var(--border); padding: 20px; border-radius: 10px; transition: transform 0.2s; background: #fff; }
-        .ticker-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .price-hero { font-size: 24px; font-weight: 800; margin: 10px 0; }
-        .metric-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px solid #f0f0f0; }
-        .badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
-        .badge-etf { background: #e1f5fe; color: #01579b; }
-        .badge-stock { background: #f3e5f5; color: #7b1fa2; }
-        
-        .pos { color: var(--success); font-weight: 600; }
-        .neg { color: var(--danger); font-weight: 600; }
-        
-        .footer-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .info-card { background: var(--bg); padding: 20px; border-radius: 8px; font-size: 13px; }
-
-        /* Mobile Optimizations */
-            @media (max-width: 768px) {
-            body { padding: 10px; }
+    :root { --primary: #0366d6; --bg: #f8f9fa; --border: #e1e4e8; --text: #1a1a1a; --success: #28a745; --danger: #d73a49; }
     
-            .dashboard-header {padding: 15px; flex-direction: column; align-items: stretch; }
-            .nav-dropdown { width: 100%; }
-            .chart-container {height: 50vh; /* Shorter chart on mobile to save space */ 
-                              min-height: 300px; }
-            .footer-info { grid-template-columns: 1fr; /* Stack info cards vertically */ }
-            #details-grid {grid-template-columns: 1fr; /* One ticker card per row on mobile */  }
-            .price-hero { font-size: 20px; }
-            }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 5px; color: var(--text); background: white; line-height: 1.2; font-size: 12px; }
+
+    /* Compact Header for Narrow Containers */
+    .dashboard-header { 
+        display: flex; 
+        flex-direction: column; /* Stacked by default for narrow/mobile */
+        gap: 10px; 
+        margin-bottom: 12px; 
+        background: var(--bg); 
+        padding: 10px; 
+        border-radius: 6px; 
+        border: 1px solid var(--border); 
+    }
+    
+    /* Horizontal row on wider screens only */
+  @media (min-width: 1200px) {
+    .dashboard-header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;  } }
+        
+    .group { display: flex; flex-direction: column; gap: 4px; }
+    .label { font-size: 9px; font-weight: 700; color: #6a737d; text-transform: uppercase; }
+    
+    select.nav-dropdown { padding: 4px 6px; font-size: 11px; width: 100%; border-radius: 4px; }
+    .btn-group { display: flex; width: 100%; }
+    .btn { flex: 1; padding: 5px 6px; font-size: 10.5px; text-align: center; border: 1px solid #d1d5da; background: white; cursor: pointer; }
+    .btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    /* Compact Chart: Scale down the Y-axis footprint */
+    .chart-container { 
+        position: relative; 
+        height: 35vh; /* Dramatically shorter height */
+        min-height: 250px; 
+        width: 100%; 
+        margin-bottom: 10px;
+    }
+
+    /* Ticker Details: Single column for sidebar/mobile compatibility */
+    #details-grid { 
+        display: none; 
+        grid-template-columns: 1fr; /* Default to 1 col to avoid squish */
+        gap: 10px; 
+    }
+
+    /* Switch to 2 columns only if there is plenty of room (min-width 1200px) */
+    @media (min-width: 1200px) {
+        #details-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .ticker-card { border: 1px solid var(--border); padding: 10px; border-radius: 6px; background: #fff; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+    .price-hero { font-size: 18px; font-weight: 800; margin: 2px 0; }
+    .metric-row { display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0; border-bottom: 1px solid #f0f0f0; }
+    
+    .footer-info { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .info-card { background: var(--bg); padding: 10px; border-radius: 6px; font-size: 11px; }
+
+    /* Mobile-Specific Tweaks */
+    @media (max-width: 600px) {
+        h2 { font-size: 16px; }
+        .chart-container { height: 26vh; min-height: 190px; }
+    }
     </style>
 </head>
 <body>
@@ -244,23 +263,37 @@ const weightedData = labels.map((_, timeIdx) => {
         });
     }
 
-    if (myChart) myChart.destroy();
+   if (myChart) myChart.destroy();
     myChart = new Chart(document.getElementById('tangentChart'), {
         type: 'line',
         data: { labels, datasets },
         options: {
-            responsive: true, maintainAspectRatio: false,
+            responsive: true, 
+            maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
             plugins: { 
-                legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } }
+                legend: { 
+                    position: 'bottom', 
+                    labels: { boxWidth: 10, padding: 10, font: { size: 10 } } 
+                }
             },
             scales: { 
-                y: { title: { display: true, text: currentMetric === 'index' ? 'Performance (Base 100)' : 'Price (USD)' }, grid: { color: '#f0f0f0' } },
-                x: { grid: { display: false } }
-            }
-        }
-    });
-}
+                y: { 
+                    ticks: { font: { size: 10 } },
+                    title: { display: false } 
+                },
+                x: { 
+                    ticks: { 
+                        font: { size: 10 }, 
+                        maxRotation: 45, 
+                        minRotation: 45,
+                        autoSkip: true,      /* Added: Prevents date crowding */
+                        maxTicksLimit: 8     /* Added: Limits number of dates shown */
+                    } 
+                }
+            } // End scales
+        } // End options
+    }); // End new Chart
 
 function renderDetails() {
     const grid = document.getElementById('details-grid');
