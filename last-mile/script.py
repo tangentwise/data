@@ -5,7 +5,7 @@ import pandas as pd
 
 # Set your tickers here (Update this list for each folder's script)
 tickers = ["UPS", "FDX", "EXPD", "AMZN"] 
-folder_name = "battery-index" # Change to "last-mile" for the other folder
+folder_name = "last-mile" # Change to "last-mile" for the other folder
 
 data_dict = {}
 
