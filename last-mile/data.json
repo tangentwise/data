@@ -1,394 +1,438 @@
 {
-  "UPS": [
-    {
-      "date": "2024-02",
-      "price": 132.34
-    },
-    {
-      "date": "2024-03",
-      "price": 134.16
-    },
-    {
-      "date": "2024-04",
-      "price": 133.12
-    },
-    {
-      "date": "2024-05",
-      "price": 125.4
-    },
-    {
-      "date": "2024-06",
-      "price": 124.9
-    },
-    {
-      "date": "2024-07",
-      "price": 118.99
-    },
-    {
-      "date": "2024-08",
-      "price": 117.33
-    },
-    {
-      "date": "2024-09",
-      "price": 126.02
-    },
-    {
-      "date": "2024-10",
-      "price": 123.91
-    },
-    {
-      "date": "2024-11",
-      "price": 125.45
-    },
-    {
-      "date": "2024-12",
-      "price": 117.99
-    },
-    {
-      "date": "2025-01",
-      "price": 106.88
-    },
-    {
-      "date": "2025-02",
-      "price": 111.37
-    },
-    {
-      "date": "2025-03",
-      "price": 104.39
-    },
-    {
-      "date": "2025-04",
-      "price": 90.45
-    },
-    {
-      "date": "2025-05",
-      "price": 92.57
-    },
-    {
-      "date": "2025-06",
-      "price": 97.38
-    },
-    {
-      "date": "2025-07",
-      "price": 83.12
-    },
-    {
-      "date": "2025-08",
-      "price": 84.35
-    },
-    {
-      "date": "2025-09",
-      "price": 82.1
-    },
-    {
-      "date": "2025-10",
-      "price": 94.77
-    },
-    {
-      "date": "2025-11",
-      "price": 94.15
-    },
-    {
-      "date": "2025-12",
-      "price": 99.19
-    },
-    {
-      "date": "2026-01",
-      "price": 104.41
-    }
-  ],
-  "FDX": [
-    {
-      "date": "2024-02",
-      "price": 238.32
-    },
-    {
-      "date": "2024-03",
-      "price": 277.35
-    },
-    {
-      "date": "2024-04",
-      "price": 251.85
-    },
-    {
-      "date": "2024-05",
-      "price": 244.33
-    },
-    {
-      "date": "2024-06",
-      "price": 288.47
-    },
-    {
-      "date": "2024-07",
-      "price": 292.38
-    },
-    {
-      "date": "2024-08",
-      "price": 289.01
-    },
-    {
-      "date": "2024-09",
-      "price": 264.74
-    },
-    {
-      "date": "2024-10",
-      "price": 266.2
-    },
-    {
-      "date": "2024-11",
-      "price": 294.22
-    },
-    {
-      "date": "2024-12",
-      "price": 273.48
-    },
-    {
-      "date": "2025-01",
-      "price": 258.75
-    },
-    {
-      "date": "2025-02",
-      "price": 256.82
-    },
-    {
-      "date": "2025-03",
-      "price": 238.15
-    },
-    {
-      "date": "2025-04",
-      "price": 206.59
-    },
-    {
-      "date": "2025-05",
-      "price": 214.22
-    },
-    {
-      "date": "2025-06",
-      "price": 223.27
-    },
-    {
-      "date": "2025-07",
-      "price": 220.93
-    },
-    {
-      "date": "2025-08",
-      "price": 228.43
-    },
-    {
-      "date": "2025-09",
-      "price": 233.11
-    },
-    {
-      "date": "2025-10",
-      "price": 252.53
-    },
-    {
-      "date": "2025-11",
-      "price": 274.27
-    },
-    {
-      "date": "2025-12",
-      "price": 287.39
-    },
-    {
-      "date": "2026-01",
-      "price": 316.31
-    }
-  ],
-  "EXPD": [
-    {
-      "date": "2024-02",
-      "price": 116.74
-    },
-    {
-      "date": "2024-03",
-      "price": 118.67
-    },
-    {
-      "date": "2024-04",
-      "price": 108.65
-    },
-    {
-      "date": "2024-05",
-      "price": 118.01
-    },
-    {
-      "date": "2024-06",
-      "price": 121.81
-    },
-    {
-      "date": "2024-07",
-      "price": 122.58
-    },
-    {
-      "date": "2024-08",
-      "price": 121.19
-    },
-    {
-      "date": "2024-09",
-      "price": 129.04
-    },
-    {
-      "date": "2024-10",
-      "price": 116.86
-    },
-    {
-      "date": "2024-11",
-      "price": 119.45
-    },
-    {
-      "date": "2024-12",
-      "price": 108.78
-    },
-    {
-      "date": "2025-01",
-      "price": 112.21
-    },
-    {
-      "date": "2025-02",
-      "price": 115.95
-    },
-    {
-      "date": "2025-03",
-      "price": 118.8
-    },
-    {
-      "date": "2025-04",
-      "price": 108.59
-    },
-    {
-      "date": "2025-05",
-      "price": 111.37
-    },
-    {
-      "date": "2025-06",
-      "price": 112.87
-    },
-    {
-      "date": "2025-07",
-      "price": 115.63
-    },
-    {
-      "date": "2025-08",
-      "price": 119.91
-    },
-    {
-      "date": "2025-09",
-      "price": 121.95
-    },
-    {
-      "date": "2025-10",
-      "price": 121.26
-    },
-    {
-      "date": "2025-11",
-      "price": 146.13
-    },
-    {
-      "date": "2025-12",
-      "price": 148.23
-    },
-    {
-      "date": "2026-01",
-      "price": 161.94
-    }
-  ],
-  "AMZN": [
-    {
-      "date": "2024-02",
-      "price": 176.76
-    },
-    {
-      "date": "2024-03",
-      "price": 180.38
-    },
-    {
-      "date": "2024-04",
-      "price": 175.0
-    },
-    {
-      "date": "2024-05",
-      "price": 176.44
-    },
-    {
-      "date": "2024-06",
-      "price": 193.25
-    },
-    {
-      "date": "2024-07",
-      "price": 186.98
-    },
-    {
-      "date": "2024-08",
-      "price": 178.5
-    },
-    {
-      "date": "2024-09",
-      "price": 186.33
-    },
-    {
-      "date": "2024-10",
-      "price": 186.4
-    },
-    {
-      "date": "2024-11",
-      "price": 207.89
-    },
-    {
-      "date": "2024-12",
-      "price": 219.39
-    },
-    {
-      "date": "2025-01",
-      "price": 237.68
-    },
-    {
-      "date": "2025-02",
-      "price": 212.28
-    },
-    {
-      "date": "2025-03",
-      "price": 190.26
-    },
-    {
-      "date": "2025-04",
-      "price": 184.42
-    },
-    {
-      "date": "2025-05",
-      "price": 205.01
-    },
-    {
-      "date": "2025-06",
-      "price": 219.39
-    },
-    {
-      "date": "2025-07",
-      "price": 234.11
-    },
-    {
-      "date": "2025-08",
-      "price": 229.0
-    },
-    {
-      "date": "2025-09",
-      "price": 219.57
-    },
-    {
-      "date": "2025-10",
-      "price": 244.22
-    },
-    {
-      "date": "2025-11",
-      "price": 233.22
-    },
-    {
-      "date": "2025-12",
-      "price": 230.82
-    },
-    {
-      "date": "2026-01",
-      "price": 239.82
-    }
-  ]
+  "UPS": {
+    "metadata": {
+      "name": "United Parcel Service, Inc.",
+      "summary": "United Parcel Service, Inc., a package delivery and logistics provider, offers transportation and delivery services. It operates through two segments, U.S. Domestic Package and International Package. The U.S. Domestic Package segment offers time-definite delivery services for express letters, documents, packages and palletized freight through air and ground services in the United States. The International Package segment provides small package operations in Europe, the Indian sub-continent, the Middle East and Africa, Canada and Latin America, and Asia. The company offers a range of guaranteed day- and time-definite international shipping services; day-definite services; cross-border ground package delivery; contract-only, e-commerce solutions for non-urgent, and cross-border shipments; and international service for urgent and palletized shipments. It also provides international air and ocean freight forwarding, contract logistics, custom brokerage and insurance, mail services, healthcare logistics, distribution, and post-sales services. United Parcel Service, Inc. was founded in 1907 and is headquartered in Atlanta, Georgia.",
+      "metric": "Market Cap: $89,233,195,008",
+      "total_return": "-20.52%",
+      "return_12m": "-1.59%",
+      "holdings": "Unavailable",
+      "type": "Stock"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 132.34
+      },
+      {
+        "date": "2024-03",
+        "price": 134.16
+      },
+      {
+        "date": "2024-04",
+        "price": 133.12
+      },
+      {
+        "date": "2024-05",
+        "price": 125.4
+      },
+      {
+        "date": "2024-06",
+        "price": 124.9
+      },
+      {
+        "date": "2024-07",
+        "price": 118.99
+      },
+      {
+        "date": "2024-08",
+        "price": 117.33
+      },
+      {
+        "date": "2024-09",
+        "price": 126.02
+      },
+      {
+        "date": "2024-10",
+        "price": 123.91
+      },
+      {
+        "date": "2024-11",
+        "price": 125.45
+      },
+      {
+        "date": "2024-12",
+        "price": 117.99
+      },
+      {
+        "date": "2025-01",
+        "price": 106.88
+      },
+      {
+        "date": "2025-02",
+        "price": 111.37
+      },
+      {
+        "date": "2025-03",
+        "price": 104.39
+      },
+      {
+        "date": "2025-04",
+        "price": 90.45
+      },
+      {
+        "date": "2025-05",
+        "price": 92.57
+      },
+      {
+        "date": "2025-06",
+        "price": 97.38
+      },
+      {
+        "date": "2025-07",
+        "price": 83.12
+      },
+      {
+        "date": "2025-08",
+        "price": 84.35
+      },
+      {
+        "date": "2025-09",
+        "price": 82.1
+      },
+      {
+        "date": "2025-10",
+        "price": 94.77
+      },
+      {
+        "date": "2025-11",
+        "price": 94.15
+      },
+      {
+        "date": "2025-12",
+        "price": 99.19
+      },
+      {
+        "date": "2026-01",
+        "price": 105.18
+      }
+    ]
+  },
+  "FDX": {
+    "metadata": {
+      "name": "FedEx Corporation",
+      "summary": "FedEx Corporation, together with its subsidiaries, provides transportation, e-commerce, and business services in the United States and internationally. It operates through Federal Express and FedEx Freight segments. The company offers transportation services, including express, freight, less-than-truckload freight, and time-specific freight-shipping; and small-package ground delivery services. It also provides e-commerce and digital solutions; dataworks; printing and shipping management, including digital printing, professional finishing, document creation, design solutions, direct mail, signs and graphics, custom-branded boxes, copying, computer rental, free Wi-Fi, corporate print solutions, shredding, expedited U.S. passport processing and renewal, and digital notarization; packing services, as well as packing supplies and boxes; document and business services; and retail access for package transportation. In addition, the company offers logistics services, air and ocean freight-forwarding and cargo transportation, specialty transportation, customs brokerage and clearance, trade management tools and data, and door-to-door solutions; and third party logistics and supply chain management solutions, such as inbound logistics, warehousing and distribution, fulfillment, contract packaging and product configuration, systems integration, returns process and disposition, test, repair, refurbishment, and product liquidation. Further, it provides sales, marketing, administrative, information technology, and back-office support services. FedEx Corporation was founded in 1971 and is headquartered in Memphis, Tennessee.",
+      "metric": "Market Cap: $74,505,297,920",
+      "total_return": "32.49%",
+      "return_12m": "22.03%",
+      "holdings": "Unavailable",
+      "type": "Stock"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 238.32
+      },
+      {
+        "date": "2024-03",
+        "price": 277.35
+      },
+      {
+        "date": "2024-04",
+        "price": 251.85
+      },
+      {
+        "date": "2024-05",
+        "price": 244.33
+      },
+      {
+        "date": "2024-06",
+        "price": 288.47
+      },
+      {
+        "date": "2024-07",
+        "price": 292.38
+      },
+      {
+        "date": "2024-08",
+        "price": 289.01
+      },
+      {
+        "date": "2024-09",
+        "price": 264.74
+      },
+      {
+        "date": "2024-10",
+        "price": 266.2
+      },
+      {
+        "date": "2024-11",
+        "price": 294.22
+      },
+      {
+        "date": "2024-12",
+        "price": 273.48
+      },
+      {
+        "date": "2025-01",
+        "price": 258.75
+      },
+      {
+        "date": "2025-02",
+        "price": 256.82
+      },
+      {
+        "date": "2025-03",
+        "price": 238.15
+      },
+      {
+        "date": "2025-04",
+        "price": 206.59
+      },
+      {
+        "date": "2025-05",
+        "price": 214.22
+      },
+      {
+        "date": "2025-06",
+        "price": 223.27
+      },
+      {
+        "date": "2025-07",
+        "price": 220.93
+      },
+      {
+        "date": "2025-08",
+        "price": 228.43
+      },
+      {
+        "date": "2025-09",
+        "price": 233.11
+      },
+      {
+        "date": "2025-10",
+        "price": 252.53
+      },
+      {
+        "date": "2025-11",
+        "price": 274.27
+      },
+      {
+        "date": "2025-12",
+        "price": 287.39
+      },
+      {
+        "date": "2026-01",
+        "price": 315.76
+      }
+    ]
+  },
+  "EXPD": {
+    "metadata": {
+      "name": "Expeditors International of Washington, Inc.",
+      "summary": "Expeditors International of Washington, Inc., together with its subsidiaries, provides logistics services in the Americas, North Asia, South Asia, Europe, and MAIR. The company offers airfreight services, such as air freight consolidation and forwarding; ocean freight and ocean services, including ocean freight consolidation, direct ocean forwarding, and order management; customs brokerage and other services, import, intra-continental ground transportation and delivery, and warehousing and distribution services; and customs clearance, purchase order management, vendor consolidation, time-definite transportation services, temperature-controlled transit, cargo insurance, specialized cargo monitoring and tracking, and other logistics solutions. It also provides optimization, trade compliance consulting, cargo insurance, cargo security, and solutions. In addition, it acts as a freight consolidator or as an agent for the airline that carries the shipment. Further, the company provides ancillary services that include preparation of shipping and customs documentation, packing, crating, insurance services, and the preparation of documentation to comply with local import and export laws. Its customers include retailing and wholesaling; electronics; healthcare; technology; and industrial and manufacturing companies. The company was incorporated in 1979 and is headquartered in Bellevue, Washington.",
+      "metric": "Market Cap: $21,926,006,784",
+      "total_return": "38.38%",
+      "return_12m": "43.97%",
+      "holdings": "Unavailable",
+      "type": "Stock"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 116.74
+      },
+      {
+        "date": "2024-03",
+        "price": 118.67
+      },
+      {
+        "date": "2024-04",
+        "price": 108.65
+      },
+      {
+        "date": "2024-05",
+        "price": 118.01
+      },
+      {
+        "date": "2024-06",
+        "price": 121.81
+      },
+      {
+        "date": "2024-07",
+        "price": 122.58
+      },
+      {
+        "date": "2024-08",
+        "price": 121.19
+      },
+      {
+        "date": "2024-09",
+        "price": 129.04
+      },
+      {
+        "date": "2024-10",
+        "price": 116.86
+      },
+      {
+        "date": "2024-11",
+        "price": 119.45
+      },
+      {
+        "date": "2024-12",
+        "price": 108.78
+      },
+      {
+        "date": "2025-01",
+        "price": 112.21
+      },
+      {
+        "date": "2025-02",
+        "price": 115.95
+      },
+      {
+        "date": "2025-03",
+        "price": 118.8
+      },
+      {
+        "date": "2025-04",
+        "price": 108.59
+      },
+      {
+        "date": "2025-05",
+        "price": 111.37
+      },
+      {
+        "date": "2025-06",
+        "price": 112.87
+      },
+      {
+        "date": "2025-07",
+        "price": 115.63
+      },
+      {
+        "date": "2025-08",
+        "price": 119.91
+      },
+      {
+        "date": "2025-09",
+        "price": 121.95
+      },
+      {
+        "date": "2025-10",
+        "price": 121.26
+      },
+      {
+        "date": "2025-11",
+        "price": 146.13
+      },
+      {
+        "date": "2025-12",
+        "price": 148.23
+      },
+      {
+        "date": "2026-01",
+        "price": 161.55
+      }
+    ]
+  },
+  "AMZN": {
+    "metadata": {
+      "name": "Amazon.com, Inc.",
+      "summary": "Amazon.com, Inc. engages in the retail sale of consumer products, advertising, and subscriptions service through online and physical stores in North America and internationally. The company operates through three segments: North America, International, and Amazon Web Services (AWS). It also manufactures and sells electronic devices, including Kindle, fire tablets, fire TVs, echo, ring, blink, and eero; and develops and produces media content. In addition, the company offers programs that enable sellers to sell their products in its stores; and programs that allow authors, independent publishers, musicians, filmmakers, Twitch streamers, skill and app developers, and others to publish and sell content. Further, it provides compute, storage, database, analytics, machine learning, and other services, as well as advertising services through programs, such as sponsored ads, display, and video advertising. Additionally, the company offers Amazon Prime, a membership program. The company's products offered through its stores include merchandise and content purchased for resale and products offered by third-party sellers. It also provides AgentCore services, such as AgentCore Runtime, AgentCore Memory, AgentCore Observability, AgentCore Identity, AgentCore Gateway, AgentCore Browser, and AgentCore Code Interpreter. It serves consumers, sellers, developers, enterprises, content creators, advertisers, and employees. Amazon.com, Inc. was incorporated in 1994 and is headquartered in Seattle, Washington.",
+      "metric": "Market Cap: $2,545,274,060,800",
+      "total_return": "34.7%",
+      "return_12m": "0.18%",
+      "holdings": "Unavailable",
+      "type": "Stock"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 176.76
+      },
+      {
+        "date": "2024-03",
+        "price": 180.38
+      },
+      {
+        "date": "2024-04",
+        "price": 175.0
+      },
+      {
+        "date": "2024-05",
+        "price": 176.44
+      },
+      {
+        "date": "2024-06",
+        "price": 193.25
+      },
+      {
+        "date": "2024-07",
+        "price": 186.98
+      },
+      {
+        "date": "2024-08",
+        "price": 178.5
+      },
+      {
+        "date": "2024-09",
+        "price": 186.33
+      },
+      {
+        "date": "2024-10",
+        "price": 186.4
+      },
+      {
+        "date": "2024-11",
+        "price": 207.89
+      },
+      {
+        "date": "2024-12",
+        "price": 219.39
+      },
+      {
+        "date": "2025-01",
+        "price": 237.68
+      },
+      {
+        "date": "2025-02",
+        "price": 212.28
+      },
+      {
+        "date": "2025-03",
+        "price": 190.26
+      },
+      {
+        "date": "2025-04",
+        "price": 184.42
+      },
+      {
+        "date": "2025-05",
+        "price": 205.01
+      },
+      {
+        "date": "2025-06",
+        "price": 219.39
+      },
+      {
+        "date": "2025-07",
+        "price": 234.11
+      },
+      {
+        "date": "2025-08",
+        "price": 229.0
+      },
+      {
+        "date": "2025-09",
+        "price": 219.57
+      },
+      {
+        "date": "2025-10",
+        "price": 244.22
+      },
+      {
+        "date": "2025-11",
+        "price": 233.22
+      },
+      {
+        "date": "2025-12",
+        "price": 230.82
+      },
+      {
+        "date": "2026-01",
+        "price": 238.1
+      }
+    ]
+  }
 }
