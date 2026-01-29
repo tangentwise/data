@@ -17,7 +17,9 @@ for t in tickers:
         if not df.empty:
             # Target the 'Close' column (yfinance v0.2.x standard)
             # We convert to float and round to 2 decimals for clean JSON
-            series = df['Close']
+            close_col = 'Close' if 'Close' in df.columns else 'Adj Close'
+            series = df[close_col]
+
             
             data_dict[t] = [
                 {"date": d.strftime('%Y-%m'), "price": round(float(v), 2)}
