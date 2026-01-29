@@ -1,0 +1,21 @@
+name: Update Battery Index
+on:
+  schedule:
+    - cron: '0 13 * * 1' # 1:00 PM UTC = 9:00 AM EST on Mondays
+  workflow_dispatch:     # Keeps the manual "Run" button active
+jobs:
+  run-battery:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - run: pip install yfinance pandas
+      - run: python battery-index/script.py
+      - run: |
+          git config --global user.name "TangentwiseBot"
+          git config --global user.email "bot@tangentwise.com"
+          git add battery-index/data.json
+          git commit -m "Monday Refresh: Battery Data" || exit 0
+          git push
