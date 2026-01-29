@@ -4,16 +4,16 @@
       "name": "Global X Lithium & Battery Tech ETF",
       "summary": "The fund invests at least 80% of its total assets in the securities of the underlying index and in American Depositary Receipts (\"ADRs\") and Global Depositary Receipts (\"GDRs\") based on the securities in the underlying index. The underlying index is designed to measure broad-based equity market performance of global companies involved in the lithium industry. The fund is non-diversified.",
       "valuation": 1482110976,
-      "total_return": "61.23%",
       "ytd_growth": "0.0%",
+      "total_return": "61.52%",
+      "type": "ETF",
       "holdings": [
         "RIO",
         "ALB",
         "002371.SZ",
         "SQM",
         "6752.T"
-      ],
-      "type": "ETF"
+      ]
     },
     "prices": [
       {
@@ -110,7 +110,7 @@
       },
       {
         "date": "2026-01",
-        "price": 73.12
+        "price": 73.25
       }
     ]
   },
@@ -119,16 +119,16 @@
       "name": "Sprott Lithium Miners ETF",
       "summary": "The fund will, under normal circumstances, invest at least 80% of its total assets in securities of the index. The index is designed to track the performance of companies that derive at least 50% of their revenue and/or assets from mining, exploration, development, or production of lithium. The index generally consists of from 40 to 50 constituents. The fund is non-diversified.",
       "valuation": 41312896,
-      "total_return": "56.85%",
       "ytd_growth": "0.0%",
+      "total_return": "56.3%",
+      "type": "ETF",
       "holdings": [
         "LTR.AX",
         "ALB",
         "SQM",
         "01772",
         "PLS.AX"
-      ],
-      "type": "ETF"
+      ]
     },
     "prices": [
       {
@@ -225,7 +225,7 @@
       },
       {
         "date": "2026-01",
-        "price": 14.43
+        "price": 14.38
       }
     ]
   },
@@ -234,16 +234,16 @@
       "name": "Proshares S&P Global Core Battery Metals ETF",
       "summary": "The fund invests in financial instruments that ProShare Advisors believes, in combination, should track the performance of the index. The index is designed to measure the performance of companies in the S&P Global Broad Market Index engaged in the mining of cobalt, lithium, and nickel\u2014base metals used to produce batteries. Under normal circumstances, it will invest at least 80% of its total assets in components of the index or in instruments with similar economic characteristics. It is non-diversified.",
       "valuation": 9058504,
-      "total_return": "127.82%",
       "ytd_growth": "0.0%",
+      "total_return": "124.27%",
+      "type": "ETF",
       "holdings": [
         "SGML.V",
         "LTR.AX",
         "PLS.AX",
         "IGO.AX",
         "SQM"
-      ],
-      "type": "ETF"
+      ]
     },
     "prices": [
       {
@@ -340,7 +340,7 @@
       },
       {
         "date": "2026-01",
-        "price": 64.29
+        "price": 63.29
       }
     ]
   },
@@ -349,10 +349,10 @@
       "name": "iShares S&P GSCI Commodity-Indexed Trust",
       "summary": "The Trust holds long positions in index futures that have settlement values at expiration based on the level of the S&P GSCI-ER at that time, and earning interest on its non-cash Collateral Assets used to satisfy applicable margin requirements on those index futures positions. The index reflects the return of the S&P GSCI-ER, together with the return on specified U.S. Treasury securities that are deemed to have been held to collateralize a hypothetical long position in the futures contracts comprising the S&P GSCI\u2122.",
       "valuation": 1081672832,
-      "total_return": "22.21%",
       "ytd_growth": "0.0%",
-      "holdings": "Unavailable",
-      "type": "ETF"
+      "total_return": "22.4%",
+      "type": "ETF",
+      "holdings": []
     },
     "prices": [
       {
@@ -449,7 +449,116 @@
       },
       {
         "date": "2026-01",
-        "price": 25.81
+        "price": 25.85
+      }
+    ]
+  },
+  "ALB": {
+    "metadata": {
+      "name": "Albemarle Corporation",
+      "summary": "Albemarle Corporation provides energy storage solutions worldwide. It operates through three segments: Energy Storage, Specialties, and Ketjen. The Energy Storage segment offers lithium compounds, including lithium carbonate, lithium hydroxide, and lithium chloride for use in lithium batteries used in consumer electronics and electric vehicles, power grids and solar panels, high performance greases, specialty glass used in consumer appliances and electronics, organic synthesis processes in the areas of steroid chemistry and vitamins, and various life science applications, as well as intermediates in the pharmaceutical industry; technical services, including handling and use of reactive lithium products; and recycling services for lithium-containing by-products. The Specialties segment provides bromine and highly specialized lithium solutions for various industries, such as energy, mobility, connectivity, and health comprising fire safety compounds; bromine-based specialty chemicals products, including elemental bromine, alkyl bromides, inorganic bromides, brominated powdered activated carbon, and various bromine fine chemicals; lithium specialties, such as butyllithium and lithium aluminum hydride; cesium products for the chemical and pharmaceutical industries; and zirconium, barium, and titanium products for pyrotechnical applications that include airbag initiators. The Ketjen segment offers clean fuels technologies, including hydroprocessing catalysts together with isomerization and akylation catalysts; fluidized catalytic cracking catalysts and additives; and performance catalyst solutions comprising organometallics and curatives. It serves grid storage, automotive, aerospace, conventional energy, electronics, construction, agriculture and food, pharmaceuticals and medical device industries. Albemarle Corporation was founded in 1887 and is headquartered in Charlotte, North Carolina.",
+      "valuation": 21179670528,
+      "ytd_growth": "0.0%",
+      "total_return": "35.32%",
+      "type": "Stock",
+      "holdings": "N/A"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 132.98
+      },
+      {
+        "date": "2024-03",
+        "price": 127.09
+      },
+      {
+        "date": "2024-04",
+        "price": 116.43
+      },
+      {
+        "date": "2024-05",
+        "price": 118.64
+      },
+      {
+        "date": "2024-06",
+        "price": 92.44
+      },
+      {
+        "date": "2024-07",
+        "price": 90.99
+      },
+      {
+        "date": "2024-08",
+        "price": 87.67
+      },
+      {
+        "date": "2024-09",
+        "price": 92.0
+      },
+      {
+        "date": "2024-10",
+        "price": 92.44
+      },
+      {
+        "date": "2024-11",
+        "price": 105.1
+      },
+      {
+        "date": "2024-12",
+        "price": 84.0
+      },
+      {
+        "date": "2025-01",
+        "price": 82.48
+      },
+      {
+        "date": "2025-02",
+        "price": 75.46
+      },
+      {
+        "date": "2025-03",
+        "price": 70.56
+      },
+      {
+        "date": "2025-04",
+        "price": 57.68
+      },
+      {
+        "date": "2025-05",
+        "price": 54.93
+      },
+      {
+        "date": "2025-06",
+        "price": 61.74
+      },
+      {
+        "date": "2025-07",
+        "price": 67.28
+      },
+      {
+        "date": "2025-08",
+        "price": 84.21
+      },
+      {
+        "date": "2025-09",
+        "price": 80.4
+      },
+      {
+        "date": "2025-10",
+        "price": 97.93
+      },
+      {
+        "date": "2025-11",
+        "price": 129.6
+      },
+      {
+        "date": "2025-12",
+        "price": 141.01
+      },
+      {
+        "date": "2026-01",
+        "price": 179.95
       }
     ]
   }

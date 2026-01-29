@@ -1,1 +1,559 @@
-{}
+{
+  "TER": {
+    "metadata": {
+      "name": "Teradyne, Inc.",
+      "summary": "Teradyne, Inc. designs, develops, manufactures, and sells automated test systems and robotics products in the United States, Asia Pacific, Europe, the Middle East, and Africa. It operates through Semiconductor Test, Robotics, and Other segments. The Semiconductor Test segment offers products and services for wafer level and device package testing, and system level testing of semiconductor devices in automotive, industrial, communications, consumer, smartphones, cloud, computer and electronic game, and other applications. This segment also provides FLEX test platform systems; J750 test system to address the volume semiconductor devices, including microcontrollers; Magnum platform that tests memory devices, such as flash memory and DRAM; and ETS platform for semiconductor manufacturers, and assembly and test subcontractors in the analog/mixed signal markets. It serves integrated device manufacturers that integrate the fabrication of silicon wafers into their business; fabless companies that outsource the manufacturing of silicon wafers; foundries; and semiconductor assembly and test providers. The Robotics segment provides collaborative robotic arms, autonomous mobile robots, and advanced robotic control software for manufacturing, logistics, and industrial customers. It also provides semiconductor test systems and instruments, defense/aerospace test instrumentation and systems, storage and system level test systems, wireless test systems and robotics products, and circuit-board test and inspection systems; production board test; and wireless test solutions for silicon validation, wireless module manufacturing, and wireless end device manufacturing under the LitePoint brand. Teradyne, Inc. was incorporated in 1960 and is headquartered in North Reading, Massachusetts.",
+      "valuation": 39450238976,
+      "ytd_growth": "0.0%",
+      "total_return": "141.43%",
+      "type": "Stock",
+      "holdings": "N/A"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 102.72
+      },
+      {
+        "date": "2024-03",
+        "price": 112.01
+      },
+      {
+        "date": "2024-04",
+        "price": 115.48
+      },
+      {
+        "date": "2024-05",
+        "price": 139.92
+      },
+      {
+        "date": "2024-06",
+        "price": 147.34
+      },
+      {
+        "date": "2024-07",
+        "price": 130.32
+      },
+      {
+        "date": "2024-08",
+        "price": 135.86
+      },
+      {
+        "date": "2024-09",
+        "price": 133.08
+      },
+      {
+        "date": "2024-10",
+        "price": 105.63
+      },
+      {
+        "date": "2024-11",
+        "price": 109.4
+      },
+      {
+        "date": "2024-12",
+        "price": 125.37
+      },
+      {
+        "date": "2025-01",
+        "price": 115.29
+      },
+      {
+        "date": "2025-02",
+        "price": 109.38
+      },
+      {
+        "date": "2025-03",
+        "price": 82.33
+      },
+      {
+        "date": "2025-04",
+        "price": 73.97
+      },
+      {
+        "date": "2025-05",
+        "price": 78.34
+      },
+      {
+        "date": "2025-06",
+        "price": 89.76
+      },
+      {
+        "date": "2025-07",
+        "price": 107.24
+      },
+      {
+        "date": "2025-08",
+        "price": 118.03
+      },
+      {
+        "date": "2025-09",
+        "price": 137.4
+      },
+      {
+        "date": "2025-10",
+        "price": 181.62
+      },
+      {
+        "date": "2025-11",
+        "price": 181.75
+      },
+      {
+        "date": "2025-12",
+        "price": 193.56
+      },
+      {
+        "date": "2026-01",
+        "price": 248.0
+      }
+    ]
+  },
+  "IRBT": {
+    "metadata": {
+      "name": "iRobot Corporation",
+      "summary": "iRobot Corporation designs, builds, and sells robots and home innovation products in the United States, Europe, the Middle East, Africa, Japan, and internationally. The company offers Roomba Combo 10 Max robot + AutoWash Dock, a robot vacuum and mop that vacuum and mop multiple floor types while the dock automatically refills and recharges the robot, washes and dries the mopping pad, empties debris, and self-cleans; and Roomba Combo which performs both mopping and vacuuming. It also provides Roomba floor vacuuming robots; accessories and consumables, such as the Clean Base Automatic Dirt Disposal system, replacement dirt disposal bags, mop pads, floor cleaning solution, filters, brushes, and other replacement parts; and service plans for floorcare robots, including an option to cover accidental damage, as well as subscription services. The company sells its products through chain stores and other national retailers, value- added distributors, and resellers, as well as through its website and app, and e-commerce websites. iRobot Corporation was incorporated in 1990 and is headquartered in Bedford, Massachusetts. On December 14, 2025, iRobot Corporation, along with its affiliates, filed a voluntary petition for reorganization under Chapter 11 in the U.S. Bankruptcy Court for the District of Delaware.",
+      "valuation": 14843741,
+      "ytd_growth": "0.0%",
+      "total_return": "-98.95%",
+      "type": "Stock",
+      "holdings": "N/A"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 11.41
+      },
+      {
+        "date": "2024-03",
+        "price": 8.76
+      },
+      {
+        "date": "2024-04",
+        "price": 8.56
+      },
+      {
+        "date": "2024-05",
+        "price": 9.61
+      },
+      {
+        "date": "2024-06",
+        "price": 9.11
+      },
+      {
+        "date": "2024-07",
+        "price": 11.79
+      },
+      {
+        "date": "2024-08",
+        "price": 7.32
+      },
+      {
+        "date": "2024-09",
+        "price": 8.69
+      },
+      {
+        "date": "2024-10",
+        "price": 8.73
+      },
+      {
+        "date": "2024-11",
+        "price": 7.61
+      },
+      {
+        "date": "2024-12",
+        "price": 7.75
+      },
+      {
+        "date": "2025-01",
+        "price": 7.69
+      },
+      {
+        "date": "2025-02",
+        "price": 7.27
+      },
+      {
+        "date": "2025-03",
+        "price": 2.7
+      },
+      {
+        "date": "2025-04",
+        "price": 2.45
+      },
+      {
+        "date": "2025-05",
+        "price": 3.07
+      },
+      {
+        "date": "2025-06",
+        "price": 3.13
+      },
+      {
+        "date": "2025-07",
+        "price": 4.21
+      },
+      {
+        "date": "2025-08",
+        "price": 3.39
+      },
+      {
+        "date": "2025-09",
+        "price": 3.59
+      },
+      {
+        "date": "2025-10",
+        "price": 3.18
+      },
+      {
+        "date": "2025-11",
+        "price": 1.58
+      },
+      {
+        "date": "2025-12",
+        "price": 0.11
+      },
+      {
+        "date": "2026-01",
+        "price": 0.12
+      }
+    ]
+  },
+  "RKDA": {
+    "metadata": {
+      "name": "Arcadia Biosciences, Inc.",
+      "summary": "Arcadia Biosciences, Inc. produces and markets plant-based food and beverage products in the United States. The company develops crop improvements primarily in wheat to enhance farm economics by improving the performance of crops in the field, as well as their value as food ingredients. Its food, beverage, and body case products include GoodWheat, Zola coconut water, ProVault topical pain relief, and SoulSpring. The company was incorporated in 2002 and is headquartered in Dallas, Texas.",
+      "valuation": 4690687,
+      "ytd_growth": "0.0%",
+      "total_return": "-24.56%",
+      "type": "Stock",
+      "holdings": "N/A"
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 2.85
+      },
+      {
+        "date": "2024-03",
+        "price": 2.21
+      },
+      {
+        "date": "2024-04",
+        "price": 2.05
+      },
+      {
+        "date": "2024-05",
+        "price": 3.06
+      },
+      {
+        "date": "2024-06",
+        "price": 3.15
+      },
+      {
+        "date": "2024-07",
+        "price": 2.77
+      },
+      {
+        "date": "2024-08",
+        "price": 3.11
+      },
+      {
+        "date": "2024-09",
+        "price": 2.73
+      },
+      {
+        "date": "2024-10",
+        "price": 3.85
+      },
+      {
+        "date": "2024-11",
+        "price": 2.79
+      },
+      {
+        "date": "2024-12",
+        "price": 5.92
+      },
+      {
+        "date": "2025-01",
+        "price": 4.84
+      },
+      {
+        "date": "2025-02",
+        "price": 3.91
+      },
+      {
+        "date": "2025-03",
+        "price": 2.97
+      },
+      {
+        "date": "2025-04",
+        "price": 3.5
+      },
+      {
+        "date": "2025-05",
+        "price": 4.71
+      },
+      {
+        "date": "2025-06",
+        "price": 4.31
+      },
+      {
+        "date": "2025-07",
+        "price": 4.3
+      },
+      {
+        "date": "2025-08",
+        "price": 3.86
+      },
+      {
+        "date": "2025-09",
+        "price": 3.47
+      },
+      {
+        "date": "2025-10",
+        "price": 3.73
+      },
+      {
+        "date": "2025-11",
+        "price": 3.59
+      },
+      {
+        "date": "2025-12",
+        "price": 1.98
+      },
+      {
+        "date": "2026-01",
+        "price": 2.15
+      }
+    ]
+  },
+  "ROBO": {
+    "metadata": {
+      "name": "Robo Global Robotics and Automation Index ETF",
+      "summary": "The fund will normally invest at least 80% of its total assets in securities of the index or in depositary receipts representing securities of the index. The index is designed to measure the performance of robotics-related and/or automation-related companies. The fund may invest up to 20% of its assets in investments that are not included in the index, but which the Adviser and Sub-Adviser believe will help it track the index. It is non-diversified.",
+      "valuation": 1287872384,
+      "ytd_growth": "0.0%",
+      "total_return": "28.79%",
+      "type": "ETF",
+      "holdings": [
+        "6954.T",
+        "NOVT",
+        "ISRG",
+        "ROK",
+        "2317.TW"
+      ]
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 56.86
+      },
+      {
+        "date": "2024-03",
+        "price": 58.08
+      },
+      {
+        "date": "2024-04",
+        "price": 53.93
+      },
+      {
+        "date": "2024-05",
+        "price": 55.23
+      },
+      {
+        "date": "2024-06",
+        "price": 54.57
+      },
+      {
+        "date": "2024-07",
+        "price": 55.36
+      },
+      {
+        "date": "2024-08",
+        "price": 54.94
+      },
+      {
+        "date": "2024-09",
+        "price": 56.52
+      },
+      {
+        "date": "2024-10",
+        "price": 54.65
+      },
+      {
+        "date": "2024-11",
+        "price": 57.05
+      },
+      {
+        "date": "2024-12",
+        "price": 55.72
+      },
+      {
+        "date": "2025-01",
+        "price": 58.87
+      },
+      {
+        "date": "2025-02",
+        "price": 56.29
+      },
+      {
+        "date": "2025-03",
+        "price": 51.28
+      },
+      {
+        "date": "2025-04",
+        "price": 50.66
+      },
+      {
+        "date": "2025-05",
+        "price": 55.71
+      },
+      {
+        "date": "2025-06",
+        "price": 59.53
+      },
+      {
+        "date": "2025-07",
+        "price": 62.07
+      },
+      {
+        "date": "2025-08",
+        "price": 63.48
+      },
+      {
+        "date": "2025-09",
+        "price": 65.29
+      },
+      {
+        "date": "2025-10",
+        "price": 69.33
+      },
+      {
+        "date": "2025-11",
+        "price": 68.04
+      },
+      {
+        "date": "2025-12",
+        "price": 69.02
+      },
+      {
+        "date": "2026-01",
+        "price": 73.23
+      }
+    ]
+  },
+  "BOTZ": {
+    "metadata": {
+      "name": "Global X Robotics & Artificial Intelligence ETF",
+      "summary": "The fund invests at least 80% of its total assets in the securities of the underlying index. The underlying index is designed to provide exposure to exchange-listed companies in developed markets that are involved in the development of robotics and/or artificial intelligence as defined by Indxx, the provider of the underlying index. The fund is non-diversified.",
+      "valuation": 3162844928,
+      "ytd_growth": "0.0%",
+      "total_return": "22.08%",
+      "type": "ETF",
+      "holdings": [
+        "NVDA",
+        "ABBN.SW",
+        "6954.T",
+        "ISRG",
+        "6861.T"
+      ]
+    },
+    "prices": [
+      {
+        "date": "2024-02",
+        "price": 30.93
+      },
+      {
+        "date": "2024-03",
+        "price": 31.55
+      },
+      {
+        "date": "2024-04",
+        "price": 29.64
+      },
+      {
+        "date": "2024-05",
+        "price": 30.53
+      },
+      {
+        "date": "2024-06",
+        "price": 30.6
+      },
+      {
+        "date": "2024-07",
+        "price": 30.59
+      },
+      {
+        "date": "2024-08",
+        "price": 31.35
+      },
+      {
+        "date": "2024-09",
+        "price": 31.93
+      },
+      {
+        "date": "2024-10",
+        "price": 31.55
+      },
+      {
+        "date": "2024-11",
+        "price": 33.15
+      },
+      {
+        "date": "2024-12",
+        "price": 31.73
+      },
+      {
+        "date": "2025-01",
+        "price": 32.96
+      },
+      {
+        "date": "2025-02",
+        "price": 31.85
+      },
+      {
+        "date": "2025-03",
+        "price": 28.27
+      },
+      {
+        "date": "2025-04",
+        "price": 28.37
+      },
+      {
+        "date": "2025-05",
+        "price": 30.69
+      },
+      {
+        "date": "2025-06",
+        "price": 32.43
+      },
+      {
+        "date": "2025-07",
+        "price": 33.33
+      },
+      {
+        "date": "2025-08",
+        "price": 33.41
+      },
+      {
+        "date": "2025-09",
+        "price": 35.28
+      },
+      {
+        "date": "2025-10",
+        "price": 37.67
+      },
+      {
+        "date": "2025-11",
+        "price": 35.02
+      },
+      {
+        "date": "2025-12",
+        "price": 36.07
+      },
+      {
+        "date": "2026-01",
+        "price": 37.76
+      }
+    ]
+  }
+}
