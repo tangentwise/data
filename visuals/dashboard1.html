@@ -155,9 +155,25 @@ function renderChart() {
         data: { labels, datasets },
         options: {
             responsive: true, maintainAspectRatio: false,
-            interaction: { mode: 'index', intersect: false },
-            plugins: { legend: { position: 'bottom' } },
-            scales: { y: { title: { display: true, text: currentMetric === 'index' ? 'Performance (100)' : 'USD' } } }
+            animation: { duration: 400,  easing: 'easeOutQuart'},
+            plugins: {
+            legend: {position: 'bottom', onClick: (e, legendItem, legend) => {
+                                                                              const chart = legend.chart;
+                                                                              const clickedIndex = legendItem.datasetIndex;
+                                                                                chart.data.datasets.forEach((ds, i) => { ds.hidden = i !== clickedIndex; });    chart.update(); }  } },
+            animation: {
+                          duration: 400,
+                          easing: 'easeOutQuart'  },
+            sscales: {
+                          x: {
+                                grid: { color: '#f0f0f0' }  },
+                          y: {  grid: { color: '#f0f0f0' },
+                            title: {  display: true,  text: currentMetric === 'index' ? 'Performance (Indexed to 100)'
+        : 'USD'
+    }
+  }
+}
+
         }
     });
 }
