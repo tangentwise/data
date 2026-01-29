@@ -7,10 +7,12 @@ from datetime import datetime
 # CONFIGURATION: Add as many sectors as you want here.
 sector_map = {
     "battery-index": ["LIT", "LITP", "ION", "GSG"],
-    "last-mile": ["UPS", "FDX", "AMZN", "EXPD", "DPSTF"],
+    "last-mile": ["UPS", "FDX", "AMZN", "EXPD", "DPSTF", "XPO", "JBHT"],
     "mro-dist": ["AIT", "DXP", "GWW", "FAST", "MSM", "WCC"],
     "gig-economy": ["UBER", "DASH", "LYFT", "TOST"],
-    "robotics-smid": ["SYM", "STRC", "RWLK", "SERV", "EKSO"] 
+    "robotics-smid": ["SYM", "STRC", "RWLK", "SERV", "EKSO"],
+    "automation-infra": ["EMR", "HON", "ABB", "SIEGY", "KEYS"],
+    "spatial-intelligence": ["TRMB", "GRMN", "CGNX", "MTLS", "ARBE"]
 }
 
 def sync_sector(folder, ticker_list):
