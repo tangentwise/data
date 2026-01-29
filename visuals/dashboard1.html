@@ -37,6 +37,19 @@
         
         .footer-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
         .info-card { background: var(--bg); padding: 20px; border-radius: 8px; font-size: 13px; }
+
+        /* Mobile Optimizations */
+            @media (max-width: 768px) {
+            body { padding: 10px; }
+    
+            .dashboard-header {padding: 15px; flex-direction: column; align-items: stretch; }
+            .nav-dropdown { width: 100%; }
+            .chart-container {height: 50vh; /* Shorter chart on mobile to save space */ 
+                              min-height: 300px; }
+            .footer-info { grid-template-columns: 1fr; /* Stack info cards vertically */ }
+            #details-grid {grid-template-columns: 1fr; /* One ticker card per row on mobile */  }
+            .price-hero { font-size: 20px; }
+            }
     </style>
 </head>
 <body>
@@ -295,6 +308,18 @@ function setView(view) {
 }
 
 fetchData();
+    // Notify WordPress to resize the iframe whenever the view changes
+function sendHeight() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ 'setHeight': height }, '*');
+}
+
+// Trigger height update after every render
+const originalRender = render;
+render = function() {
+    originalRender();
+    setTimeout(sendHeight, 200); // Small delay to allow cards to finish drawing
+};
 </script>
 </body>
 </html>
