@@ -5,13 +5,26 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
     :root { --primary: #0366d6; --bg: #f8f9fa; --border: #e1e4e8; --text: #1a1a1a; --success: #28a745; --danger: #d73a49; }
-    
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 5px; color: var(--text); background: white; line-height: 1.2; font-size: 12px; }
+
+    html, body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    body { 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+        padding: 5px; 
+        color: var(--text); 
+        background: white; 
+        line-height: 1.2; 
+        font-size: 12px; 
+    }
 
     /* Compact Header for Narrow Containers */
     .dashboard-header { 
         display: flex; 
-        flex-direction: column; /* Stacked by default for narrow/mobile */
+        flex-direction: column; 
         gap: 10px; 
         margin-bottom: 12px; 
         background: var(--bg); 
@@ -20,13 +33,14 @@
         border: 1px solid var(--border); 
     }
     
-    /* Horizontal row on wider screens only */
-  @media (min-width: 1200px) {
-    .dashboard-header {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;  } }
-        
+    @media (min-width: 1200px) {
+        .dashboard-header {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
     .group { display: flex; flex-direction: column; gap: 4px; }
     .label { font-size: 9px; font-weight: 700; color: #6a737d; text-transform: uppercase; }
     
@@ -35,23 +49,22 @@
     .btn { flex: 1; padding: 5px 6px; font-size: 10.5px; text-align: center; border: 1px solid #d1d5da; background: white; cursor: pointer; }
     .btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-    /* Compact Chart: Scale down the Y-axis footprint */
+    /* Chart */
     .chart-container { 
         position: relative; 
-        height: 35vh; /* Dramatically shorter height */
-        min-height: 250px; 
-        width: 100%; 
+        width: 100% !important;
+        height: 32vh; 
+        min-height: 200px; 
         margin-bottom: 10px;
     }
 
-    /* Ticker Details: Single column for sidebar/mobile compatibility */
+    /* Ticker Details */
     #details-grid { 
         display: none; 
-        grid-template-columns: 1fr; /* Default to 1 col to avoid squish */
+        grid-template-columns: 1fr; 
         gap: 10px; 
     }
 
-    /* Switch to 2 columns only if there is plenty of room (min-width 1200px) */
     @media (min-width: 1200px) {
         #details-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -64,7 +77,6 @@
     .footer-info { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
     .info-card { background: var(--bg); padding: 10px; border-radius: 6px; font-size: 11px; }
 
-    /* Mobile-Specific Tweaks */
     @media (max-width: 600px) {
         h2 { font-size: 16px; }
         .chart-container { height: 26vh; min-height: 190px; }
@@ -83,7 +95,7 @@
             <option value="mro-dist">MRO Distribution</option>
             <option value="automation-infra">Automation Infrastructure</option>
             <option value="spatial-intelligence">Mapping & Spatial Intelligence</option>              
-            </select>
+        </select>
     </div>
     
     <div class="group">
@@ -116,32 +128,31 @@
         <strong>Market-Cap & Net Asset Weighted Index</strong>
         <p>
             This benchmark is constructed using valuation-based weights—Market Capitalization for equities and Net Assets for ETFs—rather than a simple equal-weighted average. 
-            As a result, larger constituents exert proportionally greater influence on index performance, reflecting real-world capital allocation and market structure. 
-            To maintain representative exposure, individual constituent weights are capped at 30% and excess weight is redistributed proportionally.
+            Larger constituents exert proportionally greater influence. We cap individual weights at 30% and redistribute excess.
         </p>
     </div>
     <div class="info-card">
         <strong>Chart Interaction & Methodology Notes</strong>
         <ul>
-            <li><strong>Legend Controls:</strong> Click a ticker to isolate or toggle individual series for focused comparison.</li>
-            <li><strong>Weighted Index Line:</strong> The black index line represents aggregate sector performance adjusted for constituent size and capitalization. 
-                        (Individual constituent weights are capped at 30%) </li>
+            <li><strong>Legend Controls:</strong> Click a ticker to isolate or toggle series.</li>
+            <li><strong>Weighted Index Line:</strong> Black line represents size-adjusted aggregate performance.</li>
         </ul>
     </div>
 </div>
-
 </div>
 
 <div id="details-grid"></div>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+
 let myChart;
 let globalData = {};
 let currentCategory = 'battery-index';
 let currentMetric = 'index';
 let currentView = 'chart';
 
-const MAX_WEIGHT = 0.30; // 30% single-name cap
+const MAX_WEIGHT = 0.30;
 const formatter = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
 const curFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
@@ -172,6 +183,7 @@ function processSectorLabel() {
 
 function render() {
     const firstTicker = Object.keys(globalData)[0];
+    if(!firstTicker) return;
     const lastEntry = globalData[firstTicker].prices.slice(-1)[0];
     document.getElementById('update-ts').innerText = `Data Updated: ${lastEntry.date}`;
 
@@ -188,17 +200,16 @@ function render() {
 
 function renderChart() {
     const tickers = Object.keys(globalData);
+    if(!tickers.length) return;
     const labels = globalData[tickers[0]].prices.map(p => p.date);
     const colors = ['#28a745', '#0366d6', '#6f42c1', '#f66a0a', '#ffd33d', '#d73a49', '#00bcd4'];
 
     const datasets = tickers.map((t, i) => {
-        const meta = globalData[t].metadata;
         const prices = globalData[t].prices;
         const basePrice = prices[0].price;
-
         return {
             label: t,
-            data: prices.map(p => currentMetric === 'index' ? (p.price / basePrice * 100).toFixed(2) : p.price),
+            data: prices.map(p => currentMetric === 'index' ? +(p.price / basePrice * 100).toFixed(2) : p.price),
             borderColor: colors[i % colors.length],
             backgroundColor: colors[i % colors.length],
             borderWidth: 2,
@@ -208,92 +219,45 @@ function renderChart() {
     });
 
     if (currentMetric === 'index') {
-        // 1. Raw market-cap weights
-const rawWeights = {};
-const totalValuation = tickers.reduce(
-    (sum, t) => sum + (globalData[t].metadata.valuation || 0), 0
-);
+        const rawWeights = {};
+        const totalValuation = tickers.reduce((sum, t) => sum + (globalData[t].metadata.valuation || 0), 0);
+        tickers.forEach(t => { rawWeights[t] = (globalData[t].metadata.valuation || 0) / totalValuation; });
 
-tickers.forEach(t => {
-    rawWeights[t] = (globalData[t].metadata.valuation || 0) / totalValuation;
-});
-
-// 2. Apply 30% cap
-let cappedWeights = {};
-let excessWeight = 0;
-let uncappedTotal = 0;
-
-tickers.forEach(t => {
-    if (rawWeights[t] > MAX_WEIGHT) {
-        cappedWeights[t] = MAX_WEIGHT;
-        excessWeight += rawWeights[t] - MAX_WEIGHT;
-    } else {
-        cappedWeights[t] = rawWeights[t];
-        uncappedTotal += rawWeights[t];
-    }
-});
-
-// 3. Redistribute excess proportionally
-tickers.forEach(t => {
-    if (rawWeights[t] <= MAX_WEIGHT) {
-        cappedWeights[t] += (rawWeights[t] / uncappedTotal) * excessWeight;
-    }
-});
-
-// 4. Build weighted index series
-const weightedData = labels.map((_, timeIdx) => {
-    let weightedSum = 0;
-    tickers.forEach(t => {
-        const perf =
-            (globalData[t].prices[timeIdx].price /
-             globalData[t].prices[0].price) * 100;
-
-        weightedSum += perf * cappedWeights[t];
-    });
-    return weightedSum.toFixed(2);
+        let cappedWeights = {};
+        let excessWeight = 0;
+        let uncappedTotal = 0;
+        tickers.forEach(t => {
+            if(rawWeights[t] > MAX_WEIGHT) { cappedWeights[t] = MAX_WEIGHT; excessWeight += rawWeights[t] - MAX_WEIGHT; }
+            else { cappedWeights[t] = rawWeights[t]; uncappedTotal += rawWeights[t]; }
         });
 
-        datasets.unshift({
-            label: `COMPOSITE BENCHMARK`,
-            data: weightedData,
-            borderColor: '#1a1a1a',
-            borderWidth: 4,
-            pointRadius: 0,
-            order: -1
+        tickers.forEach(t => { if(rawWeights[t] <= MAX_WEIGHT) { cappedWeights[t] += (rawWeights[t]/uncappedTotal)*excessWeight; } });
+
+        const weightedData = labels.map((_, i) => {
+            let sum = 0;
+            tickers.forEach(t => { sum += (globalData[t].prices[i].price / globalData[t].prices[0].price * 100) * cappedWeights[t]; });
+            return +sum.toFixed(2);
         });
+
+        datasets.unshift({ label: `COMPOSITE BENCHMARK`, data: weightedData, borderColor: '#1a1a1a', borderWidth: 4, pointRadius: 0, order: -1 });
     }
 
-   if (myChart) myChart.destroy();
+    if(myChart) myChart.destroy();
     myChart = new Chart(document.getElementById('tangentChart'), {
         type: 'line',
         data: { labels, datasets },
         options: {
-            responsive: true, 
+            responsive: true,
             maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
-            plugins: { 
-                legend: { 
-                    position: 'bottom', 
-                    labels: { boxWidth: 10, padding: 10, font: { size: 10 } } 
-                }
-            },
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 10, font:{size:10} } } },
             scales: { 
-                y: { 
-                    ticks: { font: { size: 10 } },
-                    title: { display: false } 
-                },
-                x: { 
-                    ticks: { 
-                        font: { size: 10 }, 
-                        maxRotation: 45, 
-                        minRotation: 45,
-                        autoSkip: true,      /* Added: Prevents date crowding */
-                        maxTicksLimit: 8     /* Added: Limits number of dates shown */
-                    } 
-                }
-            } // End scales
-        } // End options
-    }); // End new Chart
+                y: { ticks:{ font:{size:10} }, title:{ display:false } },
+                x: { ticks:{ font:{size:10}, maxRotation:45, minRotation:45, autoSkip:true, maxTicksLimit:8 } }
+            }
+        }
+    });
+}
 
 function renderDetails() {
     const grid = document.getElementById('details-grid');
@@ -303,55 +267,40 @@ function renderDetails() {
         const latestPrice = globalData[t].prices.slice(-1)[0].price;
         const card = document.createElement('div');
         card.className = 'ticker-card';
-        
         const ytdClass = m.ytd_growth.startsWith('-') ? 'neg' : 'pos';
         const totClass = m.total_return.startsWith('-') ? 'neg' : 'pos';
 
         card.innerHTML = `
             <div class="card-header">
                 <strong>${m.name}</strong>
-                <span class="badge ${m.type === 'ETF' ? 'badge-etf' : 'badge-stock'}">${m.type}</span>
+                <span class="badge ${m.type==='ETF'?'badge-etf':'badge-stock'}">${m.type}</span>
             </div>
             <div class="price-hero">${curFormatter.format(latestPrice)}</div>
             <div class="metric-row"><span>Valuation</span> <strong>${formatter.format(m.valuation)}</strong></div>
             <div class="metric-row"><span>YTD Growth</span> <strong class="${ytdClass}">${m.ytd_growth}</strong></div>
             <div class="metric-row"><span>24M Return</span> <strong class="${totClass}">${m.total_return}</strong></div>
-            <p style="font-size:12px; color: #666; margin: 15px 0;">${m.summary.substring(0, 140)}...</p>
-            <div style="font-size:11px; color:#999; border-top: 1px solid #eee; padding-top: 10px;">
-                Top Holdings: ${Array.isArray(m.holdings) ? m.holdings.join(', ') : m.holdings}
+            <p style="font-size:12px;color:#666;margin:15px 0;">${m.summary.substring(0,140)}...</p>
+            <div style="font-size:11px;color:#999;border-top:1px solid #eee;padding-top:10px;">
+                Top Holdings: ${Array.isArray(m.holdings)?m.holdings.join(', '):m.holdings}
             </div>
         `;
         grid.appendChild(card);
     });
 }
 
-function setCategory(cat) { currentCategory = cat; fetchData(); }
-function setMetric(met) { 
-    currentMetric = met; 
-    document.getElementById('btn-index').classList.toggle('active', met === 'index');
-    document.getElementById('btn-price').classList.toggle('active', met === 'price');
-    render(); 
-}
-function setView(view) { 
-    currentView = view; 
-    document.getElementById('mode-chart').classList.toggle('active', view === 'chart');
-    document.getElementById('mode-details').classList.toggle('active', view === 'details');
-    render(); 
-}
+function setCategory(cat){ currentCategory=cat; fetchData(); }
+function setMetric(met){ currentMetric=met; document.getElementById('btn-index').classList.toggle('active',met==='index'); document.getElementById('btn-price').classList.toggle('active',met==='price'); render(); }
+function setView(view){ currentView=view; document.getElementById('mode-chart').classList.toggle('active',view==='chart'); document.getElementById('mode-details').classList.toggle('active',view==='details'); render(); }
+
+function sendHeight(){ window.parent.postMessage({ setHeight:document.body.scrollHeight }, '*'); }
 
 fetchData();
-    // Notify WordPress to resize the iframe whenever the view changes
-function sendHeight() {
-    const height = document.body.scrollHeight;
-    window.parent.postMessage({ 'setHeight': height }, '*');
-}
 
-// Trigger height update after every render
+// Override render to send iframe height
 const originalRender = render;
-render = function() {
-    originalRender();
-    setTimeout(sendHeight, 200); // Small delay to allow cards to finish drawing
-};
+render = function(){ originalRender(); setTimeout(sendHeight,200); };
+
+});
 </script>
 </body>
 </html>
