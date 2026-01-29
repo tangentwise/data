@@ -5,7 +5,7 @@ import pandas as pd
 from datetime import datetime
 
 # CONFIGURATION
-tickers = ["UPS", "FDX", "EXPD", "AMZN"]
+tickers = ["UPS", "FDX", "EXPD", "AMZN", "DPSTF"]
 folder_name = "last-mile" 
 
 data_dict = {}
