@@ -1,558 +1,357 @@
 {
-  "TER": {
+  "SYM": {
     "metadata": {
-      "name": "Teradyne, Inc.",
-      "summary": "Teradyne, Inc. designs, develops, manufactures, and sells automated test systems and robotics products in the United States, Asia Pacific, Europe, the Middle East, and Africa. It operates through Semiconductor Test, Robotics, and Other segments. The Semiconductor Test segment offers products and services for wafer level and device package testing, and system level testing of semiconductor devices in automotive, industrial, communications, consumer, smartphones, cloud, computer and electronic game, and other applications. This segment also provides FLEX test platform systems; J750 test system to address the volume semiconductor devices, including microcontrollers; Magnum platform that tests memory devices, such as flash memory and DRAM; and ETS platform for semiconductor manufacturers, and assembly and test subcontractors in the analog/mixed signal markets. It serves integrated device manufacturers that integrate the fabrication of silicon wafers into their business; fabless companies that outsource the manufacturing of silicon wafers; foundries; and semiconductor assembly and test providers. The Robotics segment provides collaborative robotic arms, autonomous mobile robots, and advanced robotic control software for manufacturing, logistics, and industrial customers. It also provides semiconductor test systems and instruments, defense/aerospace test instrumentation and systems, storage and system level test systems, wireless test systems and robotics products, and circuit-board test and inspection systems; production board test; and wireless test solutions for silicon validation, wireless module manufacturing, and wireless end device manufacturing under the LitePoint brand. Teradyne, Inc. was incorporated in 1960 and is headquartered in North Reading, Massachusetts.",
-      "valuation": 39450238976,
+      "name": "Symbotic Inc.",
+      "summary": "Symbotic Inc., an automation technology company, develops technologies to enhance operating efficiencies in modern warehouses. The company automates the processing of pallets, cases, and individual items in warehouses. Its systems enhance operations at the front end of the supply chain. The company is headquartered in Wilmington, Massachusetts.",
+      "valuation": 33314932736,
       "ytd_growth": "0.0%",
-      "total_return": "141.43%",
+      "total_return": "42.64%",
       "type": "Stock",
       "holdings": "N/A"
     },
     "prices": [
       {
         "date": "2024-02",
-        "price": 102.72
+        "price": 39.4
       },
       {
         "date": "2024-03",
-        "price": 112.01
+        "price": 45.0
       },
       {
         "date": "2024-04",
-        "price": 115.48
+        "price": 38.57
       },
       {
         "date": "2024-05",
-        "price": 139.92
+        "price": 39.57
       },
       {
         "date": "2024-06",
-        "price": 147.34
+        "price": 35.16
       },
       {
         "date": "2024-07",
-        "price": 130.32
+        "price": 26.81
       },
       {
         "date": "2024-08",
-        "price": 135.86
+        "price": 19.2
       },
       {
         "date": "2024-09",
-        "price": 133.08
+        "price": 24.39
       },
       {
         "date": "2024-10",
-        "price": 105.63
+        "price": 27.79
       },
       {
         "date": "2024-11",
-        "price": 109.4
+        "price": 26.9
       },
       {
         "date": "2024-12",
-        "price": 125.37
+        "price": 23.71
       },
       {
         "date": "2025-01",
-        "price": 115.29
+        "price": 29.35
       },
       {
         "date": "2025-02",
-        "price": 109.38
+        "price": 22.7
       },
       {
         "date": "2025-03",
-        "price": 82.33
+        "price": 20.21
       },
       {
         "date": "2025-04",
-        "price": 73.97
+        "price": 21.58
       },
       {
         "date": "2025-05",
-        "price": 78.34
+        "price": 28.67
       },
       {
         "date": "2025-06",
-        "price": 89.76
+        "price": 38.85
       },
       {
         "date": "2025-07",
-        "price": 107.24
+        "price": 53.95
       },
       {
         "date": "2025-08",
-        "price": 118.03
+        "price": 47.43
       },
       {
         "date": "2025-09",
-        "price": 137.4
+        "price": 53.9
       },
       {
         "date": "2025-10",
-        "price": 181.62
+        "price": 80.95
       },
       {
         "date": "2025-11",
-        "price": 181.75
+        "price": 83.77
       },
       {
         "date": "2025-12",
-        "price": 193.56
+        "price": 59.5
       },
       {
         "date": "2026-01",
-        "price": 248.0
+        "price": 56.2
       }
     ]
   },
-  "IRBT": {
+  "STRC": {
     "metadata": {
-      "name": "iRobot Corporation",
-      "summary": "iRobot Corporation designs, builds, and sells robots and home innovation products in the United States, Europe, the Middle East, Africa, Japan, and internationally. The company offers Roomba Combo 10 Max robot + AutoWash Dock, a robot vacuum and mop that vacuum and mop multiple floor types while the dock automatically refills and recharges the robot, washes and dries the mopping pad, empties debris, and self-cleans; and Roomba Combo which performs both mopping and vacuuming. It also provides Roomba floor vacuuming robots; accessories and consumables, such as the Clean Base Automatic Dirt Disposal system, replacement dirt disposal bags, mop pads, floor cleaning solution, filters, brushes, and other replacement parts; and service plans for floorcare robots, including an option to cover accidental damage, as well as subscription services. The company sells its products through chain stores and other national retailers, value- added distributors, and resellers, as well as through its website and app, and e-commerce websites. iRobot Corporation was incorporated in 1990 and is headquartered in Bedford, Massachusetts. On December 14, 2025, iRobot Corporation, along with its affiliates, filed a voluntary petition for reorganization under Chapter 11 in the U.S. Bankruptcy Court for the District of Delaware.",
-      "valuation": 14843741,
+      "name": "Strategy Inc",
+      "summary": "Strategy Inc, together with its subsidiaries, operates as a bitcoin treasury company in the United States, Europe, the Middle East, Africa, and internationally. The company offers investors varying degrees of economic exposure to Bitcoin by offering a range of securities, including equity and fixed income instruments. It also provides AI-powered enterprise analytics software, including Strategy One, which provides non-technical users with the ability to directly access novel and actionable insights for decision-making; and Strategy Mosaic, a universal intelligence layer that offers enterprises with consistent definitions and governance across data sources, regardless of where that data resides or which tools access it. The company was formerly known as MicroStrategy Incorporated and changed its name to Strategy Inc in August 2025. The company was incorporated in 1989 and is headquartered in Tysons Corner, Virginia.",
+      "valuation": 0,
       "ytd_growth": "0.0%",
-      "total_return": "-98.95%",
+      "total_return": "5.89%",
+      "type": "Stock",
+      "holdings": "N/A"
+    },
+    "prices": [
+      {
+        "date": "2025-08",
+        "price": 92.73
+      },
+      {
+        "date": "2025-09",
+        "price": 92.84
+      },
+      {
+        "date": "2025-10",
+        "price": 95.88
+      },
+      {
+        "date": "2025-11",
+        "price": 94.07
+      },
+      {
+        "date": "2025-12",
+        "price": 97.0
+      },
+      {
+        "date": "2026-01",
+        "price": 98.19
+      }
+    ]
+  },
+  "SERV": {
+    "metadata": {
+      "name": "Serve Robotics Inc.",
+      "summary": "Serve Robotics Inc. designs, develops, and operates low-emission robots that serve people in public spaces for food delivery activity in the United States. It builds self-driving delivery robots. Serve Robotics Inc. was founded in 2017 and is headquartered in Redwood City, California.",
+      "valuation": 841663360,
+      "ytd_growth": "0.0%",
+      "total_return": "324.81%",
+      "type": "Stock",
+      "holdings": "N/A"
+    },
+    "prices": [
+      {
+        "date": "2024-04",
+        "price": 2.66
+      },
+      {
+        "date": "2024-05",
+        "price": 2.88
+      },
+      {
+        "date": "2024-06",
+        "price": 1.95
+      },
+      {
+        "date": "2024-07",
+        "price": 17.52
+      },
+      {
+        "date": "2024-08",
+        "price": 8.49
+      },
+      {
+        "date": "2024-09",
+        "price": 7.95
+      },
+      {
+        "date": "2024-10",
+        "price": 10.13
+      },
+      {
+        "date": "2024-11",
+        "price": 8.7
+      },
+      {
+        "date": "2024-12",
+        "price": 13.5
+      },
+      {
+        "date": "2025-01",
+        "price": 16.59
+      },
+      {
+        "date": "2025-02",
+        "price": 9.01
+      },
+      {
+        "date": "2025-03",
+        "price": 5.75
+      },
+      {
+        "date": "2025-04",
+        "price": 6.17
+      },
+      {
+        "date": "2025-05",
+        "price": 11.7
+      },
+      {
+        "date": "2025-06",
+        "price": 11.44
+      },
+      {
+        "date": "2025-07",
+        "price": 10.19
+      },
+      {
+        "date": "2025-08",
+        "price": 11.1
+      },
+      {
+        "date": "2025-09",
+        "price": 11.63
+      },
+      {
+        "date": "2025-10",
+        "price": 13.23
+      },
+      {
+        "date": "2025-11",
+        "price": 10.26
+      },
+      {
+        "date": "2025-12",
+        "price": 10.38
+      },
+      {
+        "date": "2026-01",
+        "price": 11.3
+      }
+    ]
+  },
+  "EKSO": {
+    "metadata": {
+      "name": "Ekso Bionics Holdings, Inc.",
+      "summary": "Ekso Bionics Holdings, Inc. designs, develops, sells, and rents exoskeleton products in the Americas, Germany, Europe, the Middle East, Africa, the Asia Pacific, and internationally. The company provides EksoNR, a wearable bionic suit and rehabilitation device that assists physical therapists and physicians to treat patients with acquired brain injury, stroke, and spinal cord injury; Ekso Indego Therapy, an adjustable and lower-limb powered exoskeleton; Ekso Indego Personal, a powered lower limb orthosis; Ekso Nomad, a power knee ankle foot orthosis; and Ekso EVO, a wearable upper body exoskeleton that elevates and supports a worker's arms to assist with tasks from chest height to overhead. It also offers EksoCare offering an extended warranty and premium service options, repairs and maintenance services, and training programs. Ekso Bionics Holdings, Inc. was founded in 2005 and is headquartered in San Rafael, California.",
+      "valuation": 29894846,
+      "ytd_growth": "0.0%",
+      "total_return": "-70.56%",
       "type": "Stock",
       "holdings": "N/A"
     },
     "prices": [
       {
         "date": "2024-02",
-        "price": 11.41
+        "price": 28.5
       },
       {
         "date": "2024-03",
-        "price": 8.76
+        "price": 20.4
       },
       {
         "date": "2024-04",
-        "price": 8.56
+        "price": 18.6
       },
       {
         "date": "2024-05",
-        "price": 9.61
+        "price": 17.25
       },
       {
         "date": "2024-06",
-        "price": 9.11
+        "price": 15.82
       },
       {
         "date": "2024-07",
-        "price": 11.79
+        "price": 15.75
       },
       {
         "date": "2024-08",
-        "price": 7.32
+        "price": 18.0
       },
       {
         "date": "2024-09",
-        "price": 8.69
+        "price": 17.4
       },
       {
         "date": "2024-10",
-        "price": 8.73
+        "price": 12.84
       },
       {
         "date": "2024-11",
-        "price": 7.61
+        "price": 10.43
       },
       {
         "date": "2024-12",
-        "price": 7.75
+        "price": 9.15
       },
       {
         "date": "2025-01",
-        "price": 7.69
+        "price": 8.07
       },
       {
         "date": "2025-02",
-        "price": 7.27
+        "price": 7.88
       },
       {
         "date": "2025-03",
-        "price": 2.7
+        "price": 6.05
       },
       {
         "date": "2025-04",
-        "price": 2.45
+        "price": 7.11
       },
       {
         "date": "2025-05",
-        "price": 3.07
+        "price": 4.53
       },
       {
         "date": "2025-06",
-        "price": 3.13
+        "price": 3.29
       },
       {
         "date": "2025-07",
-        "price": 4.21
+        "price": 3.48
       },
       {
         "date": "2025-08",
-        "price": 3.39
+        "price": 3.75
       },
       {
         "date": "2025-09",
-        "price": 3.59
+        "price": 5.13
       },
       {
         "date": "2025-10",
-        "price": 3.18
+        "price": 5.39
       },
       {
         "date": "2025-11",
-        "price": 1.58
+        "price": 4.73
       },
       {
         "date": "2025-12",
-        "price": 0.11
+        "price": 8.64
       },
       {
         "date": "2026-01",
-        "price": 0.12
-      }
-    ]
-  },
-  "RKDA": {
-    "metadata": {
-      "name": "Arcadia Biosciences, Inc.",
-      "summary": "Arcadia Biosciences, Inc. produces and markets plant-based food and beverage products in the United States. The company develops crop improvements primarily in wheat to enhance farm economics by improving the performance of crops in the field, as well as their value as food ingredients. Its food, beverage, and body case products include GoodWheat, Zola coconut water, ProVault topical pain relief, and SoulSpring. The company was incorporated in 2002 and is headquartered in Dallas, Texas.",
-      "valuation": 4690687,
-      "ytd_growth": "0.0%",
-      "total_return": "-24.56%",
-      "type": "Stock",
-      "holdings": "N/A"
-    },
-    "prices": [
-      {
-        "date": "2024-02",
-        "price": 2.85
-      },
-      {
-        "date": "2024-03",
-        "price": 2.21
-      },
-      {
-        "date": "2024-04",
-        "price": 2.05
-      },
-      {
-        "date": "2024-05",
-        "price": 3.06
-      },
-      {
-        "date": "2024-06",
-        "price": 3.15
-      },
-      {
-        "date": "2024-07",
-        "price": 2.77
-      },
-      {
-        "date": "2024-08",
-        "price": 3.11
-      },
-      {
-        "date": "2024-09",
-        "price": 2.73
-      },
-      {
-        "date": "2024-10",
-        "price": 3.85
-      },
-      {
-        "date": "2024-11",
-        "price": 2.79
-      },
-      {
-        "date": "2024-12",
-        "price": 5.92
-      },
-      {
-        "date": "2025-01",
-        "price": 4.84
-      },
-      {
-        "date": "2025-02",
-        "price": 3.91
-      },
-      {
-        "date": "2025-03",
-        "price": 2.97
-      },
-      {
-        "date": "2025-04",
-        "price": 3.5
-      },
-      {
-        "date": "2025-05",
-        "price": 4.71
-      },
-      {
-        "date": "2025-06",
-        "price": 4.31
-      },
-      {
-        "date": "2025-07",
-        "price": 4.3
-      },
-      {
-        "date": "2025-08",
-        "price": 3.86
-      },
-      {
-        "date": "2025-09",
-        "price": 3.47
-      },
-      {
-        "date": "2025-10",
-        "price": 3.73
-      },
-      {
-        "date": "2025-11",
-        "price": 3.59
-      },
-      {
-        "date": "2025-12",
-        "price": 1.98
-      },
-      {
-        "date": "2026-01",
-        "price": 2.15
-      }
-    ]
-  },
-  "ROBO": {
-    "metadata": {
-      "name": "Robo Global Robotics and Automation Index ETF",
-      "summary": "The fund will normally invest at least 80% of its total assets in securities of the index or in depositary receipts representing securities of the index. The index is designed to measure the performance of robotics-related and/or automation-related companies. The fund may invest up to 20% of its assets in investments that are not included in the index, but which the Adviser and Sub-Adviser believe will help it track the index. It is non-diversified.",
-      "valuation": 1287872384,
-      "ytd_growth": "0.0%",
-      "total_return": "28.79%",
-      "type": "ETF",
-      "holdings": [
-        "6954.T",
-        "NOVT",
-        "ISRG",
-        "ROK",
-        "2317.TW"
-      ]
-    },
-    "prices": [
-      {
-        "date": "2024-02",
-        "price": 56.86
-      },
-      {
-        "date": "2024-03",
-        "price": 58.08
-      },
-      {
-        "date": "2024-04",
-        "price": 53.93
-      },
-      {
-        "date": "2024-05",
-        "price": 55.23
-      },
-      {
-        "date": "2024-06",
-        "price": 54.57
-      },
-      {
-        "date": "2024-07",
-        "price": 55.36
-      },
-      {
-        "date": "2024-08",
-        "price": 54.94
-      },
-      {
-        "date": "2024-09",
-        "price": 56.52
-      },
-      {
-        "date": "2024-10",
-        "price": 54.65
-      },
-      {
-        "date": "2024-11",
-        "price": 57.05
-      },
-      {
-        "date": "2024-12",
-        "price": 55.72
-      },
-      {
-        "date": "2025-01",
-        "price": 58.87
-      },
-      {
-        "date": "2025-02",
-        "price": 56.29
-      },
-      {
-        "date": "2025-03",
-        "price": 51.28
-      },
-      {
-        "date": "2025-04",
-        "price": 50.66
-      },
-      {
-        "date": "2025-05",
-        "price": 55.71
-      },
-      {
-        "date": "2025-06",
-        "price": 59.53
-      },
-      {
-        "date": "2025-07",
-        "price": 62.07
-      },
-      {
-        "date": "2025-08",
-        "price": 63.48
-      },
-      {
-        "date": "2025-09",
-        "price": 65.29
-      },
-      {
-        "date": "2025-10",
-        "price": 69.33
-      },
-      {
-        "date": "2025-11",
-        "price": 68.04
-      },
-      {
-        "date": "2025-12",
-        "price": 69.02
-      },
-      {
-        "date": "2026-01",
-        "price": 73.23
-      }
-    ]
-  },
-  "BOTZ": {
-    "metadata": {
-      "name": "Global X Robotics & Artificial Intelligence ETF",
-      "summary": "The fund invests at least 80% of its total assets in the securities of the underlying index. The underlying index is designed to provide exposure to exchange-listed companies in developed markets that are involved in the development of robotics and/or artificial intelligence as defined by Indxx, the provider of the underlying index. The fund is non-diversified.",
-      "valuation": 3162844928,
-      "ytd_growth": "0.0%",
-      "total_return": "22.08%",
-      "type": "ETF",
-      "holdings": [
-        "NVDA",
-        "ABBN.SW",
-        "6954.T",
-        "ISRG",
-        "6861.T"
-      ]
-    },
-    "prices": [
-      {
-        "date": "2024-02",
-        "price": 30.93
-      },
-      {
-        "date": "2024-03",
-        "price": 31.55
-      },
-      {
-        "date": "2024-04",
-        "price": 29.64
-      },
-      {
-        "date": "2024-05",
-        "price": 30.53
-      },
-      {
-        "date": "2024-06",
-        "price": 30.6
-      },
-      {
-        "date": "2024-07",
-        "price": 30.59
-      },
-      {
-        "date": "2024-08",
-        "price": 31.35
-      },
-      {
-        "date": "2024-09",
-        "price": 31.93
-      },
-      {
-        "date": "2024-10",
-        "price": 31.55
-      },
-      {
-        "date": "2024-11",
-        "price": 33.15
-      },
-      {
-        "date": "2024-12",
-        "price": 31.73
-      },
-      {
-        "date": "2025-01",
-        "price": 32.96
-      },
-      {
-        "date": "2025-02",
-        "price": 31.85
-      },
-      {
-        "date": "2025-03",
-        "price": 28.27
-      },
-      {
-        "date": "2025-04",
-        "price": 28.37
-      },
-      {
-        "date": "2025-05",
-        "price": 30.69
-      },
-      {
-        "date": "2025-06",
-        "price": 32.43
-      },
-      {
-        "date": "2025-07",
-        "price": 33.33
-      },
-      {
-        "date": "2025-08",
-        "price": 33.41
-      },
-      {
-        "date": "2025-09",
-        "price": 35.28
-      },
-      {
-        "date": "2025-10",
-        "price": 37.67
-      },
-      {
-        "date": "2025-11",
-        "price": 35.02
-      },
-      {
-        "date": "2025-12",
-        "price": 36.07
-      },
-      {
-        "date": "2026-01",
-        "price": 37.76
+        "price": 8.39
       }
     ]
   }
