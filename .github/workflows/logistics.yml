@@ -1,0 +1,21 @@
+name: Update Logistics Index
+on:
+  schedule:
+    - cron: '15 13 * * 1' # 9:15 AM EST (Staggered by 15 mins to avoid high traffic)
+  workflow_dispatch: 
+jobs:
+  run-logistics:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.10' }
+      - run: pip install yfinance pandas
+      - run: python last-mile/script.py
+      - run: |
+          git config --global user.name "TangentwiseBot"
+          git config --global user.email "bot@tangentwise.com"
+          git add last-mile/data.json
+          git commit -m "Monday Refresh: Logistics Data" || exit 0
+          git push
