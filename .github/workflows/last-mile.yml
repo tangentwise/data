@@ -1,7 +1,7 @@
-name: Update Logistics Index
+name: Update Last Mile Index
 on:
   schedule:
-    - cron: '15 13 * * 1' # 9:15 AM EST (Staggered by 15 mins to avoid high traffic)
+    - cron: '15 13 * * 1' # 9:15 AM EST on Mondays
   workflow_dispatch: 
 jobs:
   run-logistics:
@@ -17,5 +17,5 @@ jobs:
           git config --global user.name "TangentwiseBot"
           git config --global user.email "bot@tangentwise.com"
           git add last-mile/data.json
-          git commit -m "Monday Refresh: Logistics Data" || exit 0
-          git push
+          # Only commit and push if the data.json actually changed
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Monday Refresh: Last Mile Data" && git push origin main)
