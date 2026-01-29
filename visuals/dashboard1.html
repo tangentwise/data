@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tangentwise Intelligence Dashboard</title>
+    <title>Tangentwise Sector Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        :root { --primary: #0366d6; --bg: #f8f9fa; --border: #e1e4e8; --text: #1a1a1a; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; color: var(--text); background: white; }
+        :root { --primary: #0366d6; --bg: #f8f9fa; --border: #e1e4e8; --text: #1a1a1a; --success: #28a745; --danger: #d73a49; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; color: var(--text); background: white; line-height: 1.5; }
         
-        /* Controls */
-        .dashboard-header { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px; background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        /* Navigation & Header */
+        .dashboard-header { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px; background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); align-items: flex-end; }
         .group { display: flex; flex-direction: column; gap: 8px; }
         .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6a737d; }
+        
+        select.nav-dropdown { padding: 10px; border-radius: 6px; border: 1px solid var(--border); font-size: 14px; font-weight: 600; min-width: 220px; cursor: pointer; }
+        
         .btn-group { display: flex; gap: 5px; }
         .btn { border: 1px solid #d1d5da; padding: 8px 14px; cursor: pointer; background: white; border-radius: 6px; font-size: 13px; font-weight: 500; transition: 0.2s; }
         .btn.active { background: var(--primary); color: white; border-color: var(--primary); }
         
-        /* Chart & UI */
-        .chart-container { position: relative; height: 60vh; width: 100%; min-height: 400px; margin-bottom: 20px; }
+        /* Main UI */
+        .chart-container { position: relative; height: 65vh; width: 100%; min-height: 450px; }
+        #details-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-top: 20px; }
         
-        /* The Key / Metadata Section */
-        .footer-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; border-top: 2px solid var(--bg); margin-top: 20px; font-size: 14px; }
-        .info-card { background: var(--bg); padding: 15px; border-radius: 8px; }
-        .timestamp { font-weight: bold; color: var(--primary); margin-bottom: 10px; display: block; }
+        /* Details Cards */
+        .ticker-card { border: 1px solid var(--border); padding: 20px; border-radius: 10px; transition: transform 0.2s; background: #fff; }
+        .ticker-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .price-hero { font-size: 24px; font-weight: 800; margin: 10px 0; }
+        .metric-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px solid #f0f0f0; }
+        .badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+        .badge-etf { background: #e1f5fe; color: #01579b; }
+        .badge-stock { background: #f3e5f5; color: #7b1fa2; }
         
-        /* Summary Grid */
-        #summary-grid { display: none; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; }
-        .ticker-card { border: 1px solid var(--border); padding: 15px; border-radius: 8px; }
-        .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-right: 5px; background: #e1f5fe; color: #01579b; }
-        .return-pos { color: #28a745; } .return-neg { color: #d73a49; }
+        .pos { color: var(--success); font-weight: 600; }
+        .neg { color: var(--danger); font-weight: 600; }
+        
+        .footer-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .info-card { background: var(--bg); padding: 20px; border-radius: 8px; font-size: 13px; }
     </style>
 </head>
 <body>
@@ -35,50 +44,53 @@
 <div class="dashboard-header">
     <div class="group">
         <span class="label">Sector Analysis</span>
-        <div class="btn-group">
-            <button id="btn-battery" class="btn active" onclick="setCategory('battery-index')">Battery Metals</button>
-            <button id="btn-logistics" class="btn" onclick="setCategory('last-mile')">Last Mile</button>
-        </div>
+        <select id="sector-nav" class="nav-dropdown" onchange="setCategory(this.value)">
+            <option value="battery-index">Battery Metals</option>
+            <option value="last-mile">Last Mile Logistics</option>
+            </select>
     </div>
+    
     <div class="group">
-        <span class="label">View Mode</span>
+        <span class="label">View</span>
         <div class="btn-group">
             <button id="mode-chart" class="btn active" onclick="setView('chart')">Analytics Chart</button>
-            <button id="mode-summary" class="btn" onclick="setView('summary')">Fundamentals</button>
+            <button id="mode-details" class="btn" onclick="setView('details')">Ticker Details</button>
         </div>
     </div>
+
     <div class="group">
-        <span class="label">Metric (Chart Only)</span>
+        <span class="label">Chart Metric</span>
         <div class="btn-group">
             <button id="btn-index" class="btn active" onclick="setMetric('index')">Performance</button>
-            <button id="btn-price" class="btn" onclick="setMetric('price')">Share Price (USD)</button>
+            <button id="btn-price" class="btn" onclick="setMetric('price')">Price (USD)</button>
         </div>
     </div>
 </div>
+
+<h2 id="view-title" style="margin-bottom: 5px;">Sector Index</h2>
+<p id="sector-description" style="color: #666; margin-top: 0; font-size: 14px;"></p>
 
 <div id="chart-view">
     <div class="chart-container">
         <canvas id="tangentChart"></canvas>
     </div>
-    
     <div class="footer-info">
         <div class="info-card">
-            <span id="update-ts" class="timestamp">Loading updates...</span>
-            <strong>About Composite Benchmark:</strong>
-            <p style="margin: 5px 0;">This benchmark represents the mathematically weighted average of all tickers in this sector, indexed to 100 at the start of the 24-month period. This allows for direct growth comparison regardless of individual share prices.</p>
+            <span id="update-ts" style="font-weight: bold; color: var(--primary);">Loading...</span><br><br>
+            <strong>Market-Cap Weighted Index:</strong>
+            <p>Unlike a simple average, this benchmark weights each ticker by its valuation (Market Cap for Stocks, Net Assets for ETFs). Larger companies have a proportional impact on the index movement.</p>
         </div>
         <div class="info-card">
-            <strong>Legend Guide:</strong>
-            <ul style="margin: 5px 0; padding-left: 18px;">
-                <li><strong>Performance:</strong> Indexed growth from 24 months ago.</li>
-                <li><strong>Share Price:</strong> Real-time nominal value in USD.</li>
-                <li>Hover over lines to see specific monthly data points.</li>
+            <strong>Legend Controls:</strong>
+            <ul>
+                <li><strong>Click</strong> a ticker to toggle its visibility.</li>
+                <li><strong>Weighted Logic:</strong> The black line reflects the true "gravity" of the sector based on company size.</li>
             </ul>
         </div>
     </div>
 </div>
 
-<div id="summary-grid"></div>
+<div id="details-grid"></div>
 
 <script>
 let myChart;
@@ -87,35 +99,54 @@ let currentCategory = 'battery-index';
 let currentMetric = 'index';
 let currentView = 'chart';
 
+const formatter = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
+const curFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+
 async function fetchData() {
     const url = `../${currentCategory}/data.json`;
-    const response = await fetch(url);
-    globalData = await response.json();
+    try {
+        const response = await fetch(url);
+        globalData = await response.json();
+        processSectorLabel();
+        render();
+    } catch (e) {
+        console.error("Fetch error:", e);
+    }
+}
+
+function processSectorLabel() {
+    const tickers = Object.values(globalData);
+    const allETFs = tickers.every(t => t.metadata.type === 'ETF');
+    const hasETFs = tickers.some(t => t.metadata.type === 'ETF');
     
-    // Set Timestamp
-    const firstTicker = Object.keys(globalData)[0];
-    const lastEntry = globalData[firstTicker].prices.slice(-1)[0];
-    document.getElementById('update-ts').innerText = `Data as of: ${lastEntry.date} | Timespan: 24 Months`;
-    
-    render();
+    let suffix = "";
+    if (allETFs) suffix = " (ETFs)";
+    else if (hasETFs) suffix = " (Includes ETFs)";
+
+    const sectorName = document.querySelector(`#sector-nav option[value="${currentCategory}"]`).text;
+    document.getElementById('view-title').innerText = `${sectorName}${suffix}`;
 }
 
 function render() {
+    const firstTicker = Object.keys(globalData)[0];
+    const lastEntry = globalData[firstTicker].prices.slice(-1)[0];
+    document.getElementById('update-ts').innerText = `Data Updated: ${lastEntry.date}`;
+
     if (currentView === 'chart') {
         document.getElementById('chart-view').style.display = 'block';
-        document.getElementById('summary-grid').style.display = 'none';
+        document.getElementById('details-grid').style.display = 'none';
         renderChart();
     } else {
         document.getElementById('chart-view').style.display = 'none';
-        document.getElementById('summary-grid').style.display = 'grid';
-        renderSummary();
+        document.getElementById('details-grid').style.display = 'grid';
+        renderDetails();
     }
 }
 
 function renderChart() {
     const tickers = Object.keys(globalData);
     const labels = globalData[tickers[0]].prices.map(p => p.date);
-    const colors = ['#28a745', '#0366d6', '#6f42c1', '#f66a0a', '#ffd33d'];
+    const colors = ['#28a745', '#0366d6', '#6f42c1', '#f66a0a', '#ffd33d', '#d73a49', '#00bcd4'];
 
     const datasets = tickers.map((t, i) => {
         const meta = globalData[t].metadata;
@@ -123,29 +154,36 @@ function renderChart() {
         const basePrice = prices[0].price;
 
         return {
-            label: `${t} (${meta.total_return})`,
+            label: t,
             data: prices.map(p => currentMetric === 'index' ? (p.price / basePrice * 100).toFixed(2) : p.price),
             borderColor: colors[i % colors.length],
-            borderWidth: currentMetric === 'index' ? 1.5 : 2.5,
-            pointRadius: 2,
-            hidden: false, // Defaulting to ON as requested
+            backgroundColor: colors[i % colors.length],
+            borderWidth: 2,
+            pointRadius: 1,
             fill: false
         };
     });
 
     if (currentMetric === 'index') {
-        const compositeData = labels.map((_, i) => {
-            let sum = 0;
-            tickers.forEach(t => sum += (globalData[t].prices[i].price / globalData[t].prices[0].price * 100));
-            return (sum / tickers.length).toFixed(2);
+        const totalValuation = tickers.reduce((sum, t) => sum + (globalData[t].metadata.valuation || 0), 0);
+        
+        const weightedData = labels.map((_, timeIdx) => {
+            let weightedSum = 0;
+            tickers.forEach(t => {
+                const weight = (globalData[t].metadata.valuation || 0) / totalValuation;
+                const perf = (globalData[t].prices[timeIdx].price / globalData[t].prices[0].price) * 100;
+                weightedSum += (perf * weight);
+            });
+            return weightedSum.toFixed(2);
         });
+
         datasets.unshift({
             label: `COMPOSITE BENCHMARK`,
-            data: compositeData,
-            borderColor: '#1b1f23',
+            data: weightedData,
+            borderColor: '#1a1a1a',
             borderWidth: 4,
             pointRadius: 0,
-            fill: false
+            order: -1
         });
     }
 
@@ -155,73 +193,49 @@ function renderChart() {
         data: { labels, datasets },
         options: {
             responsive: true, maintainAspectRatio: false,
-            animation: { duration: 400,  easing: 'easeOutQuart'},
-            plugins: {
-            legend: {position: 'bottom', onClick: (e, legendItem, legend) => {
-                                                                              const chart = legend.chart;
-                                                                              const clickedIndex = legendItem.datasetIndex;
-                                                                                chart.data.datasets.forEach((ds, i) => { ds.hidden = i !== clickedIndex; });    chart.update(); }  } },
-            animation: {
-                          duration: 400,
-                          easing: 'easeOutQuart'  },
-            sscales: {
-                          x: {
-                                grid: { color: '#f0f0f0' }  },
-                          y: {  grid: { color: '#f0f0f0' },
-                            title: {  display: true,  text: currentMetric === 'index' ? 'Performance (Indexed to 100)'
-        : 'USD'
-    }
-  }
-}
-
+            interaction: { mode: 'index', intersect: false },
+            plugins: { 
+                legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } }
+            },
+            scales: { 
+                y: { title: { display: true, text: currentMetric === 'index' ? 'Performance (Base 100)' : 'Price (USD)' }, grid: { color: '#f0f0f0' } },
+                x: { grid: { display: false } }
+            }
         }
     });
 }
 
-function renderSummary() {
-    const grid = document.getElementById('summary-grid');
+function renderDetails() {
+    const grid = document.getElementById('details-grid');
     grid.innerHTML = '';
     Object.keys(globalData).forEach(t => {
         const m = globalData[t].metadata;
+        const latestPrice = globalData[t].prices.slice(-1)[0].price;
         const card = document.createElement('div');
         card.className = 'ticker-card';
+        
+        const ytdClass = m.ytd_growth.startsWith('-') ? 'neg' : 'pos';
+        const totClass = m.total_return.startsWith('-') ? 'neg' : 'pos';
+
         card.innerHTML = `
-            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                <strong>${m.name} (${t})</strong>
-                <span class="badge">${m.type}</span>
+            <div class="card-header">
+                <strong>${m.name}</strong>
+                <span class="badge ${m.type === 'ETF' ? 'badge-etf' : 'badge-stock'}">${m.type}</span>
             </div>
-            <p style="font-size:12px; color: #666; margin: 10px 0;">${m.summary.substring(0, 150)}...</p>
-            <div style="font-size:13px;">
-                <div><strong>${m.metric}</strong></div>
-                <div class="return-pos">Total Return: ${m.total_return}</div>
-                <div class="return-pos" title="12-Month Return">1-Year: ${m.return_12m}</div>
-                <div style="margin-top:8px; font-size:11px; color:#888;">
-                    Top Holdings: ${Array.isArray(m.holdings) ? m.holdings.join(', ') : m.holdings}
-                </div>
+            <div class="price-hero">${curFormatter.format(latestPrice)}</div>
+            <div class="metric-row"><span>Valuation</span> <strong>${formatter.format(m.valuation)}</strong></div>
+            <div class="metric-row"><span>YTD Growth</span> <strong class="${ytdClass}">${m.ytd_growth}</strong></div>
+            <div class="metric-row"><span>24M Return</span> <strong class="${totClass}">${m.total_return}</strong></div>
+            <p style="font-size:12px; color: #666; margin: 15px 0;">${m.summary.substring(0, 140)}...</p>
+            <div style="font-size:11px; color:#999; border-top: 1px solid #eee; padding-top: 10px;">
+                Top Holdings: ${Array.isArray(m.holdings) ? m.holdings.join(', ') : m.holdings}
             </div>
         `;
         grid.appendChild(card);
     });
 }
 
-// Controls
-function setCategory(cat) { 
-    currentCategory = cat; 
-    
-    // 1. Remove 'active' class from ALL sector buttons
-    document.getElementById('btn-battery').classList.remove('active');
-    document.getElementById('btn-logistics').classList.remove('active');
-    
-    // 2. Add 'active' class to the specific button clicked
-    if (cat === 'battery-index') {
-        document.getElementById('btn-battery').classList.add('active');
-    } else if (cat === 'last-mile') {
-        document.getElementById('btn-logistics').classList.add('active');
-    }
-    
-    // 3. Trigger the data fetch
-    fetchData(); 
-}
+function setCategory(cat) { currentCategory = cat; fetchData(); }
 function setMetric(met) { 
     currentMetric = met; 
     document.getElementById('btn-index').classList.toggle('active', met === 'index');
@@ -231,7 +245,7 @@ function setMetric(met) {
 function setView(view) { 
     currentView = view; 
     document.getElementById('mode-chart').classList.toggle('active', view === 'chart');
-    document.getElementById('mode-summary').classList.toggle('active', view === 'summary');
+    document.getElementById('mode-details').classList.toggle('active', view === 'details');
     render(); 
 }
 
