@@ -106,6 +106,7 @@ let currentCategory = 'battery-index';
 let currentMetric = 'index';
 let currentView = 'chart';
 
+const MAX_WEIGHT = 0.30; // 30% single-name cap
 const formatter = new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 });
 const curFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
@@ -172,16 +173,51 @@ function renderChart() {
     });
 
     if (currentMetric === 'index') {
-        const totalValuation = tickers.reduce((sum, t) => sum + (globalData[t].metadata.valuation || 0), 0);
-        
-        const weightedData = labels.map((_, timeIdx) => {
-            let weightedSum = 0;
-            tickers.forEach(t => {
-                const weight = (globalData[t].metadata.valuation || 0) / totalValuation;
-                const perf = (globalData[t].prices[timeIdx].price / globalData[t].prices[0].price) * 100;
-                weightedSum += (perf * weight);
-            });
-            return weightedSum.toFixed(2);
+        // 1. Raw market-cap weights
+const rawWeights = {};
+const totalValuation = tickers.reduce(
+    (sum, t) => sum + (globalData[t].metadata.valuation || 0), 0
+);
+
+tickers.forEach(t => {
+    rawWeights[t] = (globalData[t].metadata.valuation || 0) / totalValuation;
+});
+
+// 2. Apply 30% cap
+let cappedWeights = {};
+let excessWeight = 0;
+let uncappedTotal = 0;
+
+tickers.forEach(t => {
+    if (rawWeights[t] > MAX_WEIGHT) {
+        cappedWeights[t] = MAX_WEIGHT;
+        excessWeight += rawWeights[t] - MAX_WEIGHT;
+    } else {
+        cappedWeights[t] = rawWeights[t];
+        uncappedTotal += rawWeights[t];
+    }
+});
+
+// 3. Redistribute excess proportionally
+tickers.forEach(t => {
+    if (rawWeights[t] <= MAX_WEIGHT) {
+        cappedWeights[t] += (rawWeights[t] / uncappedTotal) * excessWeight;
+    }
+});
+
+// 4. Build weighted index series
+const weightedData = labels.map((_, timeIdx) => {
+    let weightedSum = 0;
+    tickers.forEach(t => {
+        const perf =
+            (globalData[t].prices[timeIdx].price /
+             globalData[t].prices[0].price) * 100;
+
+        weightedSum += perf * cappedWeights[t];
+    });
+    return weightedSum.toFixed(2);
+});
+
         });
 
         datasets.unshift({
