@@ -5,7 +5,7 @@
       "summary": "The fund invests at least 80% of its total assets in the securities of the underlying index and in American Depositary Receipts (\"ADRs\") and Global Depositary Receipts (\"GDRs\") based on the securities in the underlying index. The underlying index is designed to measure broad-based equity market performance of global companies involved in the lithium industry. The fund is non-diversified.",
       "valuation": 1482110976,
       "ytd_growth": "0.0%",
-      "total_return": "62.34%",
+      "total_return": "54.24%",
       "type": "ETF",
       "holdings": [
         "RIO",
@@ -110,7 +110,7 @@
       },
       {
         "date": "2026-01",
-        "price": 73.62
+        "price": 69.95
       }
     ]
   },
@@ -120,7 +120,7 @@
       "summary": "The fund will, under normal circumstances, invest at least 80% of its total assets in securities of the index. The index is designed to track the performance of companies that derive at least 50% of their revenue and/or assets from mining, exploration, development, or production of lithium. The index generally consists of from 40 to 50 constituents. The fund is non-diversified.",
       "valuation": 41312896,
       "ytd_growth": "0.0%",
-      "total_return": "57.28%",
+      "total_return": "40.76%",
       "type": "ETF",
       "holdings": [
         "LTR.AX",
@@ -225,7 +225,7 @@
       },
       {
         "date": "2026-01",
-        "price": 14.47
+        "price": 12.95
       }
     ]
   },
@@ -235,7 +235,7 @@
       "summary": "The fund invests in financial instruments that ProShare Advisors believes, in combination, should track the performance of the index. The index is designed to measure the performance of companies in the S&P Global Broad Market Index engaged in the mining of cobalt, lithium, and nickel\u2014base metals used to produce batteries. Under normal circumstances, it will invest at least 80% of its total assets in components of the index or in instruments with similar economic characteristics. It is non-diversified.",
       "valuation": 9058504,
       "ytd_growth": "0.0%",
-      "total_return": "125.27%",
+      "total_return": "104.36%",
       "type": "ETF",
       "holdings": [
         "SGML.V",
@@ -340,7 +340,7 @@
       },
       {
         "date": "2026-01",
-        "price": 63.57
+        "price": 57.67
       }
     ]
   },
@@ -350,7 +350,7 @@
       "summary": "The Trust holds long positions in index futures that have settlement values at expiration based on the level of the S&P GSCI-ER at that time, and earning interest on its non-cash Collateral Assets used to satisfy applicable margin requirements on those index futures positions. The index reflects the return of the S&P GSCI-ER, together with the return on specified U.S. Treasury securities that are deemed to have been held to collateralize a hypothetical long position in the futures contracts comprising the S&P GSCI\u2122.",
       "valuation": 1081672832,
       "ytd_growth": "0.0%",
-      "total_return": "22.96%",
+      "total_return": "20.64%",
       "type": "ETF",
       "holdings": []
     },
@@ -449,7 +449,7 @@
       },
       {
         "date": "2026-01",
-        "price": 25.97
+        "price": 25.48
       }
     ]
   }
